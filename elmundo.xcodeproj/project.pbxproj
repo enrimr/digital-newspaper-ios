@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E50679581A235D6700F39808 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E50679571A235D6700F39808 /* main.m */; };
+		E506795B1A235D6700F39808 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E506795A1A235D6700F39808 /* AppDelegate.m */; };
+		E506795E1A235D6700F39808 /* elmundo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E506795C1A235D6700F39808 /* elmundo.xcdatamodeld */; };
+		E50679611A235D6700F39808 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E50679601A235D6700F39808 /* ViewController.m */; };
+		E50679641A235D6700F39808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50679621A235D6700F39808 /* Main.storyboard */; };
+		E50679661A235D6700F39808 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50679651A235D6700F39808 /* Images.xcassets */; };
+		E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E50679671A235D6700F39808 /* LaunchScreen.xib */; };
+		E50679751A235D6700F39808 /* elmundoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E50679741A235D6700F39808 /* elmundoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E506796F1A235D6700F39808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E506794A1A235D6700F39808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E50679511A235D6700F39808;
+			remoteInfo = elmundo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E50679521A235D6700F39808 /* elmundo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elmundo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E50679561A235D6700F39808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E50679571A235D6700F39808 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E50679591A235D6700F39808 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E506795A1A235D6700F39808 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E506795D1A235D6700F39808 /* elmundo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = elmundo.xcdatamodel; sourceTree = "<group>"; };
+		E506795F1A235D6700F39808 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E50679601A235D6700F39808 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E50679631A235D6700F39808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E50679651A235D6700F39808 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E50679681A235D6700F39808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E506796E1A235D6700F39808 /* elmundoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = elmundoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E50679731A235D6700F39808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E50679741A235D6700F39808 /* elmundoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = elmundoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E506794F1A235D6700F39808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E506796B1A235D6700F39808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E50679491A235D6700F39808 = {
+			isa = PBXGroup;
+			children = (
+				E50679541A235D6700F39808 /* elmundo */,
+				E50679711A235D6700F39808 /* elmundoTests */,
+				E50679531A235D6700F39808 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E50679531A235D6700F39808 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E50679521A235D6700F39808 /* elmundo.app */,
+				E506796E1A235D6700F39808 /* elmundoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E50679541A235D6700F39808 /* elmundo */ = {
+			isa = PBXGroup;
+			children = (
+				E50679591A235D6700F39808 /* AppDelegate.h */,
+				E506795A1A235D6700F39808 /* AppDelegate.m */,
+				E506795F1A235D6700F39808 /* ViewController.h */,
+				E50679601A235D6700F39808 /* ViewController.m */,
+				E50679621A235D6700F39808 /* Main.storyboard */,
+				E50679651A235D6700F39808 /* Images.xcassets */,
+				E50679671A235D6700F39808 /* LaunchScreen.xib */,
+				E506795C1A235D6700F39808 /* elmundo.xcdatamodeld */,
+				E50679551A235D6700F39808 /* Supporting Files */,
+			);
+			path = elmundo;
+			sourceTree = "<group>";
+		};
+		E50679551A235D6700F39808 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E50679561A235D6700F39808 /* Info.plist */,
+				E50679571A235D6700F39808 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E50679711A235D6700F39808 /* elmundoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E50679741A235D6700F39808 /* elmundoTests.m */,
+				E50679721A235D6700F39808 /* Supporting Files */,
+			);
+			path = elmundoTests;
+			sourceTree = "<group>";
+		};
+		E50679721A235D6700F39808 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E50679731A235D6700F39808 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E50679511A235D6700F39808 /* elmundo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E50679781A235D6700F39808 /* Build configuration list for PBXNativeTarget "elmundo" */;
+			buildPhases = (
+				E506794E1A235D6700F39808 /* Sources */,
+				E506794F1A235D6700F39808 /* Frameworks */,
+				E50679501A235D6700F39808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = elmundo;
+			productName = elmundo;
+			productReference = E50679521A235D6700F39808 /* elmundo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E506796D1A235D6700F39808 /* elmundoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E506797B1A235D6700F39808 /* Build configuration list for PBXNativeTarget "elmundoTests" */;
+			buildPhases = (
+				E506796A1A235D6700F39808 /* Sources */,
+				E506796B1A235D6700F39808 /* Frameworks */,
+				E506796C1A235D6700F39808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E50679701A235D6700F39808 /* PBXTargetDependency */,
+			);
+			name = elmundoTests;
+			productName = elmundoTests;
+			productReference = E506796E1A235D6700F39808 /* elmundoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E506794A1A235D6700F39808 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "cuaQea SL";
+				TargetAttributes = {
+					E50679511A235D6700F39808 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					E506796D1A235D6700F39808 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = E50679511A235D6700F39808;
+					};
+				};
+			};
+			buildConfigurationList = E506794D1A235D6700F39808 /* Build configuration list for PBXProject "elmundo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E50679491A235D6700F39808;
+			productRefGroup = E50679531A235D6700F39808 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E50679511A235D6700F39808 /* elmundo */,
+				E506796D1A235D6700F39808 /* elmundoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E50679501A235D6700F39808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E50679641A235D6700F39808 /* Main.storyboard in Resources */,
+				E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */,
+				E50679661A235D6700F39808 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E506796C1A235D6700F39808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E506794E1A235D6700F39808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E506795B1A235D6700F39808 /* AppDelegate.m in Sources */,
+				E50679581A235D6700F39808 /* main.m in Sources */,
+				E50679611A235D6700F39808 /* ViewController.m in Sources */,
+				E506795E1A235D6700F39808 /* elmundo.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E506796A1A235D6700F39808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E50679751A235D6700F39808 /* elmundoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E50679701A235D6700F39808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E50679511A235D6700F39808 /* elmundo */;
+			targetProxy = E506796F1A235D6700F39808 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E50679621A235D6700F39808 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E50679631A235D6700F39808 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E50679671A235D6700F39808 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E50679681A235D6700F39808 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E50679761A235D6700F39808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E50679771A235D6700F39808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E50679791A235D6700F39808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = elmundo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E506797A1A235D6700F39808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = elmundo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E506797C1A235D6700F39808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = elmundoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/elmundo.app/elmundo";
+			};
+			name = Debug;
+		};
+		E506797D1A235D6700F39808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = elmundoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/elmundo.app/elmundo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E506794D1A235D6700F39808 /* Build configuration list for PBXProject "elmundo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E50679761A235D6700F39808 /* Debug */,
+				E50679771A235D6700F39808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E50679781A235D6700F39808 /* Build configuration list for PBXNativeTarget "elmundo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E50679791A235D6700F39808 /* Debug */,
+				E506797A1A235D6700F39808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E506797B1A235D6700F39808 /* Build configuration list for PBXNativeTarget "elmundoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E506797C1A235D6700F39808 /* Debug */,
+				E506797D1A235D6700F39808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E506795C1A235D6700F39808 /* elmundo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E506795D1A235D6700F39808 /* elmundo.xcdatamodel */,
+			);
+			currentVersion = E506795D1A235D6700F39808 /* elmundo.xcdatamodel */;
+			path = elmundo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E506794A1A235D6700F39808 /* Project object */;
+}
