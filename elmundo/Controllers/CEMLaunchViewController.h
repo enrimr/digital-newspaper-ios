@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CEMLaunchViewController.h
 //  elmundo
 //
 //  Created by Enrique Ismael Mendoza Robaina on 24/11/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CEMLaunchViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
-

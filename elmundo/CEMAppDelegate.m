@@ -6,17 +6,22 @@
 //  Copyright (c) 2014 cuaQea SL. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "CEMAppDelegate.h"
+#import "CEMNewsViewController.h"
+#import "CEMLaunchViewController.h"
 
-@interface AppDelegate ()
+@interface CEMAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation CEMAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self showLaunch];
+    
     return YES;
 }
 
@@ -122,6 +127,43 @@
             abort();
         }
     }
+}
+
+#pragma mark - cuaQea - Navigation
+-(void)showLaunch{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //CQACuaqsListModel *cuaqs = [CQACuaqsListModel cuaqsListWithTitle:@"My diary" cuaqs:@[]];
+    CEMLaunchViewController *launchVC = [[CEMLaunchViewController alloc] init];
+    
+    // Combinadores
+    UINavigationController *elMundoNav = [[UINavigationController alloc] initWithRootViewController:launchVC];
+    
+    // Lo asignamos como controlador raíz
+    self.window.rootViewController = elMundoNav;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+}
+
+-(void)showMain{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //CQACuaqsListModel *cuaqs = [CQACuaqsListModel cuaqsListWithTitle:@"My diary" cuaqs:@[]];
+    CEMNewsViewController *newsVC = [[CEMNewsViewController alloc] initWithStyle:UITableViewStylePlain];
+    UITabBarController *elMundoTabVC = [[UITabBarController alloc] init];
+    [elMundoTabVC setViewControllers:@[newsVC]];
+    
+    //[[diaryTabVC tabBar] setTintColor:[[CQAColors alloc] aqua]];
+    
+    // Combinadores
+    UINavigationController *elMundoNav = [[UINavigationController alloc] initWithRootViewController:elMundoTabVC];
+    
+    // Lo asignamos como controlador raíz
+    self.window.rootViewController = elMundoNav;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
 }
 
 @end

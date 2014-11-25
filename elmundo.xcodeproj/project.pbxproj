@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		E50679581A235D6700F39808 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E50679571A235D6700F39808 /* main.m */; };
-		E506795B1A235D6700F39808 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E506795A1A235D6700F39808 /* AppDelegate.m */; };
+		E506795B1A235D6700F39808 /* CEMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E506795A1A235D6700F39808 /* CEMAppDelegate.m */; };
 		E506795E1A235D6700F39808 /* elmundo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E506795C1A235D6700F39808 /* elmundo.xcdatamodeld */; };
-		E50679611A235D6700F39808 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E50679601A235D6700F39808 /* ViewController.m */; };
-		E50679641A235D6700F39808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50679621A235D6700F39808 /* Main.storyboard */; };
 		E50679661A235D6700F39808 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50679651A235D6700F39808 /* Images.xcassets */; };
 		E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E50679671A235D6700F39808 /* LaunchScreen.xib */; };
 		E50679751A235D6700F39808 /* elmundoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E50679741A235D6700F39808 /* elmundoTests.m */; };
+		E506798C1A2363B600F39808 /* CEMNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E506798A1A2363B600F39808 /* CEMNewsViewController.m */; };
+		E506798D1A2363B600F39808 /* CEMNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E506798B1A2363B600F39808 /* CEMNewsViewController.xib */; };
+		E50679911A23674D00F39808 /* CEMLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E506798F1A23674D00F39808 /* CEMLaunchViewController.m */; };
+		E50679921A23674D00F39808 /* CEMLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E50679901A23674D00F39808 /* CEMLaunchViewController.xib */; };
+		E506799E1A236A8400F39808 /* logoLaunch in Resources */ = {isa = PBXBuildFile; fileRef = E50679981A236A8400F39808 /* logoLaunch */; };
+		E506799F1A236A8400F39808 /* logoLaunch@2x in Resources */ = {isa = PBXBuildFile; fileRef = E50679991A236A8400F39808 /* logoLaunch@2x */; };
+		E50679A01A236A8400F39808 /* logoLaunch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E506799A1A236A8400F39808 /* logoLaunch@3x.png */; };
+		E50679A11A236A8400F39808 /* logoNav in Resources */ = {isa = PBXBuildFile; fileRef = E506799B1A236A8400F39808 /* logoNav */; };
+		E50679A21A236A8400F39808 /* logoNav@2x in Resources */ = {isa = PBXBuildFile; fileRef = E506799C1A236A8400F39808 /* logoNav@2x */; };
+		E50679A31A236A8400F39808 /* logoNav@3x in Resources */ = {isa = PBXBuildFile; fileRef = E506799D1A236A8400F39808 /* logoNav@3x */; };
+		E50679A71A239E3D00F39808 /* CEMArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = E50679A61A239E3D00F39808 /* CEMArticle.m */; };
+		E50FD7731A24A7F90026EC43 /* CEMAd.m in Sources */ = {isa = PBXBuildFile; fileRef = E50FD7721A24A7F90026EC43 /* CEMAd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,17 +41,30 @@
 		E50679521A235D6700F39808 /* elmundo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elmundo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50679561A235D6700F39808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E50679571A235D6700F39808 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E50679591A235D6700F39808 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E506795A1A235D6700F39808 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E50679591A235D6700F39808 /* CEMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CEMAppDelegate.h; sourceTree = "<group>"; };
+		E506795A1A235D6700F39808 /* CEMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CEMAppDelegate.m; sourceTree = "<group>"; };
 		E506795D1A235D6700F39808 /* elmundo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = elmundo.xcdatamodel; sourceTree = "<group>"; };
-		E506795F1A235D6700F39808 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E50679601A235D6700F39808 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E50679631A235D6700F39808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E50679651A235D6700F39808 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E50679681A235D6700F39808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E506796E1A235D6700F39808 /* elmundoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = elmundoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50679731A235D6700F39808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E50679741A235D6700F39808 /* elmundoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = elmundoTests.m; sourceTree = "<group>"; };
+		E50679891A2363B600F39808 /* CEMNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMNewsViewController.h; path = Controllers/CEMNewsViewController.h; sourceTree = "<group>"; };
+		E506798A1A2363B600F39808 /* CEMNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMNewsViewController.m; path = Controllers/CEMNewsViewController.m; sourceTree = "<group>"; };
+		E506798B1A2363B600F39808 /* CEMNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CEMNewsViewController.xib; path = Controllers/CEMNewsViewController.xib; sourceTree = "<group>"; };
+		E506798E1A23674D00F39808 /* CEMLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMLaunchViewController.h; path = Controllers/CEMLaunchViewController.h; sourceTree = "<group>"; };
+		E506798F1A23674D00F39808 /* CEMLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMLaunchViewController.m; path = Controllers/CEMLaunchViewController.m; sourceTree = "<group>"; };
+		E50679901A23674D00F39808 /* CEMLaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CEMLaunchViewController.xib; path = Controllers/CEMLaunchViewController.xib; sourceTree = "<group>"; };
+		E50679981A236A8400F39808 /* logoLaunch */ = {isa = PBXFileReference; lastKnownFileType = file; path = logoLaunch; sourceTree = "<group>"; };
+		E50679991A236A8400F39808 /* logoLaunch@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logoLaunch@2x"; sourceTree = "<group>"; };
+		E506799A1A236A8400F39808 /* logoLaunch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoLaunch@3x.png"; sourceTree = "<group>"; };
+		E506799B1A236A8400F39808 /* logoNav */ = {isa = PBXFileReference; lastKnownFileType = file; path = logoNav; sourceTree = "<group>"; };
+		E506799C1A236A8400F39808 /* logoNav@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logoNav@2x"; sourceTree = "<group>"; };
+		E506799D1A236A8400F39808 /* logoNav@3x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logoNav@3x"; sourceTree = "<group>"; };
+		E50679A51A239E3D00F39808 /* CEMArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMArticle.h; path = Models/CEMArticle.h; sourceTree = "<group>"; };
+		E50679A61A239E3D00F39808 /* CEMArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMArticle.m; path = Models/CEMArticle.m; sourceTree = "<group>"; };
+		E50FD7711A24A7F90026EC43 /* CEMAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMAd.h; path = Models/CEMAd.h; sourceTree = "<group>"; };
+		E50FD7721A24A7F90026EC43 /* CEMAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMAd.m; path = Models/CEMAd.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,15 +106,15 @@
 		E50679541A235D6700F39808 /* elmundo */ = {
 			isa = PBXGroup;
 			children = (
-				E50679591A235D6700F39808 /* AppDelegate.h */,
-				E506795A1A235D6700F39808 /* AppDelegate.m */,
-				E506795F1A235D6700F39808 /* ViewController.h */,
-				E50679601A235D6700F39808 /* ViewController.m */,
-				E50679621A235D6700F39808 /* Main.storyboard */,
+				E50679A41A239E1500F39808 /* Models */,
+				E50679931A236A8400F39808 /* Resources */,
+				E50679591A235D6700F39808 /* CEMAppDelegate.h */,
+				E506795A1A235D6700F39808 /* CEMAppDelegate.m */,
 				E50679651A235D6700F39808 /* Images.xcassets */,
 				E50679671A235D6700F39808 /* LaunchScreen.xib */,
 				E506795C1A235D6700F39808 /* elmundo.xcdatamodeld */,
 				E50679551A235D6700F39808 /* Supporting Files */,
+				E50679881A2361AC00F39808 /* Controllers */,
 			);
 			path = elmundo;
 			sourceTree = "<group>";
@@ -120,6 +143,75 @@
 				E50679731A235D6700F39808 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E50679881A2361AC00F39808 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E50679891A2363B600F39808 /* CEMNewsViewController.h */,
+				E506798A1A2363B600F39808 /* CEMNewsViewController.m */,
+				E506798B1A2363B600F39808 /* CEMNewsViewController.xib */,
+				E506798E1A23674D00F39808 /* CEMLaunchViewController.h */,
+				E506798F1A23674D00F39808 /* CEMLaunchViewController.m */,
+				E50679901A23674D00F39808 /* CEMLaunchViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E50679931A236A8400F39808 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E50679941A236A8400F39808 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E50679941A236A8400F39808 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E50679951A236A8400F39808 /* Backgrounds */,
+				E50679961A236A8400F39808 /* Icons */,
+				E50679971A236A8400F39808 /* Logos */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		E50679951A236A8400F39808 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
+		E50679961A236A8400F39808 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		E50679971A236A8400F39808 /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				E50679981A236A8400F39808 /* logoLaunch */,
+				E50679991A236A8400F39808 /* logoLaunch@2x */,
+				E506799A1A236A8400F39808 /* logoLaunch@3x.png */,
+				E506799B1A236A8400F39808 /* logoNav */,
+				E506799C1A236A8400F39808 /* logoNav@2x */,
+				E506799D1A236A8400F39808 /* logoNav@3x */,
+			);
+			path = Logos;
+			sourceTree = "<group>";
+		};
+		E50679A41A239E1500F39808 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E50679A51A239E3D00F39808 /* CEMArticle.h */,
+				E50679A61A239E3D00F39808 /* CEMArticle.m */,
+				E50FD7711A24A7F90026EC43 /* CEMAd.h */,
+				E50FD7721A24A7F90026EC43 /* CEMAd.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +294,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E50679641A235D6700F39808 /* Main.storyboard in Resources */,
+				E506798D1A2363B600F39808 /* CEMNewsViewController.xib in Resources */,
+				E506799F1A236A8400F39808 /* logoLaunch@2x in Resources */,
 				E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */,
+				E506799E1A236A8400F39808 /* logoLaunch in Resources */,
+				E50679A01A236A8400F39808 /* logoLaunch@3x.png in Resources */,
+				E50679A11A236A8400F39808 /* logoNav in Resources */,
 				E50679661A235D6700F39808 /* Images.xcassets in Resources */,
+				E50679A31A236A8400F39808 /* logoNav@3x in Resources */,
+				E50679A21A236A8400F39808 /* logoNav@2x in Resources */,
+				E50679921A23674D00F39808 /* CEMLaunchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,10 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E506795B1A235D6700F39808 /* AppDelegate.m in Sources */,
+				E50679911A23674D00F39808 /* CEMLaunchViewController.m in Sources */,
+				E506795B1A235D6700F39808 /* CEMAppDelegate.m in Sources */,
+				E50FD7731A24A7F90026EC43 /* CEMAd.m in Sources */,
 				E50679581A235D6700F39808 /* main.m in Sources */,
-				E50679611A235D6700F39808 /* ViewController.m in Sources */,
 				E506795E1A235D6700F39808 /* elmundo.xcdatamodeld in Sources */,
+				E50679A71A239E3D00F39808 /* CEMArticle.m in Sources */,
+				E506798C1A2363B600F39808 /* CEMNewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,14 +350,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E50679621A235D6700F39808 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E50679631A235D6700F39808 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E50679671A235D6700F39808 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,6 +510,7 @@
 				E506797A1A235D6700F39808 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E506797B1A235D6700F39808 /* Build configuration list for PBXNativeTarget "elmundoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +519,7 @@
 				E506797D1A235D6700F39808 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
