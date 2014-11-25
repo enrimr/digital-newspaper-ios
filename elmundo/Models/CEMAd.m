@@ -20,7 +20,15 @@
    sharedCount:(int)aSharedCount
      voteCount:(int)aVotesCount
 {
-
+    return [[CEMAd alloc] initWithId:anAdId
+                               title:aTitle
+                                text:aText
+                                 url:aUrl
+                          categories:arrayOfCategories
+                              images:arrayOfImages
+                              videos:arrayOfVideos
+                         sharedCount:aSharedCount
+                           voteCount:aVotesCount];
 }
 
 // Inicializador designado
