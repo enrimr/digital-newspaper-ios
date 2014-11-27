@@ -2,12 +2,12 @@
 //  BaseApi.h
 //  Cuaqea
 //
-//  Created by Enrique Ismael Mendoza Robaina on 15/08/13.
+//  Created by Pablo López Torres on 15/08/13.
 //  Copyright (c) 2013 Cuaqea SL. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "CQAAppDelegate.h"
+#import "CEMAppDelegate.h"
 
 @interface CQABaseApi : NSObject
 

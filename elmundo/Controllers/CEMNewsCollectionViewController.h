@@ -13,4 +13,8 @@
 @property (strong, nonatomic) NSArray *tableElements;
 @property (nonatomic) BOOL backButton;
 
+- (id)initWithTitle:(NSString *)aTitle
+           articles:(NSArray *)arrayOfArticles
+         backButton:(BOOL)showBackButton;
+
 @end

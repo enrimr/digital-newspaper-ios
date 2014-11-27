@@ -9,6 +9,7 @@
 #import "CEMLaunchViewController.h"
 #import "CEMArticle.h"
 #import "CEMAd.h"
+#import "CEMNewsCollectionViewController.h"
 
 @interface CEMLaunchViewController ()
 
@@ -31,10 +32,10 @@
                                           textSummary:@"Chanante ipsum dolor sit amet, bonico del tó quis zagal bizcoché bocachoti cabeza de viejo cuerpo de joven, gaticos magna viejuno. A tope con la maquinaria, ut ad fresquete páharo, labore soooy crossoverr con las rodillas in the guanter estoy fatal de lo mío ea freshquisimo..."
                                                images:nil
                                                videos:nil
-                                        commentsCount:0
+                                        commentsCount:9
                                              comments:nil
-                                          sharedCount:0
-                                            voteCount:0
+                                          sharedCount:15
+                                            voteCount:991
                                                    ad:nil];
     CEMArticle *article2 = [CEMArticle articleWithId:@"2"
                                                title:@"Premio a los vecinos ilustres"
@@ -48,10 +49,10 @@
                                          textSummary:@"El Consistorio distinguirá a los premiados con una calle o plaza pública Destacado..."
                                               images:nil
                                               videos:nil
-                                       commentsCount:0
+                                       commentsCount:3
                                             comments:nil
-                                         sharedCount:0
-                                           voteCount:0
+                                         sharedCount:7
+                                           voteCount:500
                                                   ad:nil];
     
     CEMArticle *article3 = [CEMArticle articleWithId:@"3"
@@ -72,6 +73,15 @@
                                            voteCount:0
                                                   ad:nil];
     
+    NSArray *articles = @[article1,article2,article3];
+
+    CEMNewsCollectionViewController *articlesVC = [[CEMNewsCollectionViewController alloc] initWithTitle:@"El Mundo"
+                                                                                             articles:articles
+                                                                                           backButton:NO];
+    // Combinadores
+    UINavigationController *elMundoNav = [[UINavigationController alloc] initWithRootViewController:articlesVC];
+    [[self navigationController] pushViewController:elMundoNav animated:YES];
+
 }
 
 - (void) viewWillAppear:(BOOL)animated

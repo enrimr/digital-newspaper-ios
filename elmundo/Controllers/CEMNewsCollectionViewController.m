@@ -19,7 +19,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (id)initWithTitle:(NSString *)aTitle
            articles:(NSArray *)arrayOfArticles
          backButton:(BOOL)showBackButton
-              style:(UITableViewStyle)aStyle
 {
     if (self = [super initWithNibName:nil bundle:nil]) {
         _tableElements = arrayOfArticles;

@@ -3,6 +3,7 @@
 //  Cuaqea
 //
 //  Created by Pablo López Torres on 15/08/13.
+//  Edited by Enrique Mendoza Robaina on 2014
 //  Copyright (c) 2013 Cuaqea SL. All rights reserved.
 //
 
