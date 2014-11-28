@@ -44,6 +44,13 @@
 }
 
 // User usage
++ (void) setFirstTimeOpen{
+    [[NSUserDefaults standardUserDefaults] setObject:FIRST_TIME forKey:FIRST_TIME];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
++ (BOOL) isFirstTimeOpen{
+    return ![[[NSUserDefaults standardUserDefaults] stringForKey:FIRST_TIME] isEqualToString:FIRST_TIME];
+}
 + (NSDate *) dateForLastAppLaunching{
     return [[NSUserDefaults standardUserDefaults] objectForKey:SETTINGS_USAGE_LAST_APP_LAUNCHING];
 }

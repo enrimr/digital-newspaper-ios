@@ -30,6 +30,10 @@ int const REMEMBER_RECORD_TIME_INTERVAL = 3;
 NSString *const BACK_BUTTON = @"ic_TabNavBlueArrowNav.png";
 NSString *const BACK_BUTTON_HOVER = @"ic_TabNavBlueArrowNavHover.png";
 
+NSString *const ELMUNDO_CHANNELS = @"elmundoChannels";
+NSString *const ELMUNDO_MY_CHANNELS = @"elmundoMyChannels";
+
+
 @implementation CEMDefinitions
 
 @end

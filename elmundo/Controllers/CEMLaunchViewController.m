@@ -20,7 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[CEMElMundoApi alloc] channels:@"userId" calledBy:self withSuccess:@selector(channelsDidEnd:) andFailure:@selector(channelsFailure:)];
+    if ([CEMSettings getChannels] == nil){
+        [[CEMElMundoApi alloc] channels:@"userId" calledBy:self withSuccess:@selector(channelsDidEnd:) andFailure:@selector(channelsFailure:)];
+    } else {
+        [self goToChannels:[CEMSettings getChannels]];
+    }
 
 }
 
@@ -62,14 +66,12 @@
 {
     NSLog(@"channelsDidEnd");
 
-    NSMutableArray *articles = [[NSArray arrayWithArray:(NSArray *)result] mutableCopy];
-    [articles addObjectsFromArray:articles];
+    //NSMutableArray *articles = [[NSArray arrayWithArray:(NSArray *)result] mutableCopy];
+    //[articles addObjectsFromArray:articles];
     
-    CEMNewsCollectionViewController *articlesVC = [[CEMNewsCollectionViewController alloc] initWithTitle:@"El Mundo"
-                                                                                                articles:articles
-                                                                                              backButton:NO];
+    [CEMSettings setChannels:result];
     
-    [[self navigationController] pushViewController:articlesVC animated:YES];
+    [self goToChannels:result];
 }
 
 -(void)channelsFailure:(id)result
@@ -77,6 +79,13 @@
     NSLog(@"channelsFailure");
 }
 
+-(void)goToChannels:(NSArray *)arrayOfChannels{
+    CEMNewsCollectionViewController *articlesVC = [[CEMNewsCollectionViewController alloc] initWithTitle:@"El Mundo"
+                                                                                                articles:arrayOfChannels
+                                                                                              backButton:NO];
+    
+    [[self navigationController] pushViewController:articlesVC animated:YES];
+}
 /*
  CEMArticle *article1 = [CEMArticle articleWithId:@"1"
  title:@"Nueva noticia 1 super guay"

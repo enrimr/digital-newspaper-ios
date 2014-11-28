@@ -19,7 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    if ([CEMSettings isFirstTimeOpen]){
+        [CEMSettings setMyChannels:@[@"espana",@"ciencia",@"economia",@"internacional",@"elmundo",@"cultura"]];
+        [CEMSettings setFirstTimeOpen];
+    }
     [self showLaunch];
     
     return YES;

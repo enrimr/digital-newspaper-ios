@@ -8,6 +8,7 @@
 
 #import "CQAAppSettingsDefinitions.h"
 
+NSString *const FIRST_TIME = @"firstTime";
 NSString *const SETTINGS_LOCAL_NOTIFICATIONS = @"settingsLocalNotifications";
 NSString *const SETTINGS_LOCAL_NOTIFICATION_DAILY_ACTION_SCHEDULE_DATE = @"settingsLocalNotificationDailyActionScheduleDate";
 NSString *const SETTINGS_SOCIAL_SHARE_BY_TWITTER = @"settingsSocialShareByTwitter";

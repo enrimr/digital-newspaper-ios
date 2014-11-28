@@ -7,8 +7,13 @@
 //
 
 #import "CEMNewsCollectionViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "CEMNewsViewController.h"
 
-@interface CEMNewsCollectionViewController ()
+@interface CEMNewsCollectionViewController (){
+    NSString *selectedChannelName;
+    BOOL isLoadingChannel;
+}
 
 @end
 
@@ -28,11 +33,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     if (self = [super initWithCollectionViewLayout:flowLayout]) {
         _backButton = showBackButton;
-        NSMutableArray *arrayWithAdd = [NSMutableArray arrayWithArray:arrayOfArticles];
-        [arrayWithAdd addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                                 @"", @"channel",
-                                 @"addButton", @"image", nil]];
-        _tableElements = [NSArray arrayWithArray:arrayWithAdd];
+        _tableElements =  arrayOfArticles;
+        isLoadingChannel = NO;
     }
     
     return self;
@@ -49,6 +51,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Do any additional setup after loading the view.
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+    
+    [self checkIfIsUserChannel];
     
     [self.collectionView reloadData];
 }
@@ -126,16 +130,22 @@ static NSString * const reuseIdentifier = @"Cell";
     UIImageView *imageView;
     if (indexPath.row == (int)[_tableElements count]-1){
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[item objectForKey:@"image"]]];
+        
+        [cell setBackgroundView:imageView];
     } else {
         // Image
         NSURL *imageUrl = [NSURL URLWithString:[item objectForKey:@"image"]];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-        /*UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-                                                                           0,
-                                                                           cell.frame.size.width,
-                                                                           cell.frame.size.height)];*/
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
-    
+        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+                                                                  0,
+                                                                  cell.frame.size.width,
+                                                                  cell.frame.size.height)];
+
+        // Set user image with cache
+        [imageView sd_setImageWithURL:imageUrl
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                     NSLog(@"Cargada");
+                                 }];
+        
         // Channel title
         [cell setBackgroundColor:[UIColor grayColor]];
     
@@ -164,54 +174,58 @@ static NSString * const reuseIdentifier = @"Cell";
         [label setLineBreakMode:NSLineBreakByTruncatingTail];
   
         // Image
-        /*UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
-         0,
-         cell.frame.size.width,
-         cell.frame.size.height)];*/
         UIImageView *backgroundTitle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"boxTitle-small"]];
         [backgroundTitle setFrame:CGRectMake(0, cell.frame.size.height - 50, cell.frame.size.width, 50)];
         
         [cell addSubview:backgroundTitle];
         [cell addSubview:label];
-    
         
+        [cell setBackgroundView:imageView];
     }
     
-    [cell setBackgroundView:imageView];
+
     
     return cell;
 }
 
+- (void)buttonClicked:(id)sender
+{
+    NSLog(@"button clicked");
+    UIButton *button = (UIButton *)sender;
+    int buttonId = [button tag];
+    NSLog([NSString stringWithFormat:@"%d", buttonId]);
+}
+
 #pragma mark <UICollectionViewDelegate>
 
-/*
+
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
 }
-*/
 
-/*
+
+
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-*/
+
 
 /*
 // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+	return YES;
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+	return YES;
 }
 
+
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
+}*/
+
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0){
@@ -228,14 +242,66 @@ static NSString * const reuseIdentifier = @"Cell";
         return CGSizeMake(92, 92);
     } else if (indexPath.row == 4){
         return CGSizeMake(195, 92);
-    }/* else if (indexPath.row % 3 == 0){
-        return CGSizeMake(100, 100);
-    } else if (indexPath.row % 3 == 1) {
-        return CGSizeMake(200, 100);
-    } else if (indexPath.row % 3 == 2) {
-        return CGSizeMake(200, 200);
-    }*/
+    }
     return CGSizeMake(92, 92);
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"asdasd");
+    CEMNewsViewController *newsVC = [[CEMNewsViewController alloc] initWithTitle:NSLocalizedString(selectedChannelName, nil)
+                                                                            news:nil
+                                                                      backButton:YES
+                                                                           style:UITableViewStylePlain];
+    
+    [self.navigationController pushViewController:newsVC animated:YES];
+    /*if (indexPath.row == [_tableElements count] -1){
+        NSLog(@"Agregar categoria");
+    } else {
+        if (!isLoadingChannel){
+            isLoadingChannel = YES;
+            //NSLog([NSString stringWithFormat:@"%d", indexPath.row]);
+            selectedChannelName = [[_tableElements objectAtIndex:indexPath.row] objectForKey:@"channel"];
+            [[CEMElMundoApi alloc] newsByChannel:selectedChannelName
+                                  userId:@"userId"
+                                calledBy:self
+                             withSuccess:@selector(newsByChannelDidEnd:)
+                              andFailure:@selector(newsByChannelFailure:)];
+        }
+    }*/
+}
+
+-(void)newsByChannelDidEnd:(id)result{
+    NSLog(@"newsByChannelDidEnd");
+    isLoadingChannel = NO;
+    CEMNewsViewController *newsVC = [[CEMNewsViewController alloc] initWithTitle:NSLocalizedString(selectedChannelName, nil)
+                                                                            news:result
+                                                                      backButton:YES
+                                                                           style:UITableViewStylePlain];
+    
+    [self.navigationController pushViewController:newsVC animated:YES];
+}
+
+- (void)newsByChannelFailure:(id)result{
+    NSLog(@"newsByChannelFailure");
+    isLoadingChannel = NO;
+}
+
+-(void)checkIfIsUserChannel{
+    NSMutableArray *tableElementsMutable = [_tableElements mutableCopy];
+    NSArray *myChannels = [CEMSettings getMyChannels];
+    for (NSDictionary * channel in _tableElements) {
+        if ([myChannels indexOfObject:[channel objectForKey:@"channel"]] == NSIntegerMax){
+            [tableElementsMutable removeObject:channel];
+        }
+    }
+    
+    // Adds add button if user has not loaded all channels
+    if (![CEMSettings areAllChannelsLoaded]) {
+        [tableElementsMutable addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                             @"", @"channel",
+                             @"addButton", @"image", nil]];
+    }
+    
+    _tableElements = tableElementsMutable;
+}
 @end

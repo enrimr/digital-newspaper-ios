@@ -24,6 +24,8 @@
 + (void) setShareByFacebook:(BOOL)value;
 
 // User usage
++ (void) setFirstTimeOpen;
++ (BOOL) isFirstTimeOpen;
 + (NSDate *) dateForLastAppLaunching;
 + (void) updateDateForLastAppLaunching;
 + (BOOL) hasOpenedAppToday;
