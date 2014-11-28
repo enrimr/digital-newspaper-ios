@@ -43,6 +43,7 @@
 		E5CB39B21A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39AD1A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png */; };
 		E5CB39B51A29064800DD0D7A /* ic_Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39B31A29064800DD0D7A /* ic_Settings.png */; };
 		E5CB39B61A29064800DD0D7A /* ic_Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39B41A29064800DD0D7A /* ic_Settings@2x.png */; };
+		E5CB39B91A291BE500DD0D7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39BB1A291BE500DD0D7A /* Localizable.strings */; };
 		E5E8D12B1A278486009386DE /* CQABaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D1281A278486009386DE /* CQABaseApi.m */; };
 		E5E8D12C1A278486009386DE /* CEMElMundoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12A1A278486009386DE /* CEMElMundoApi.m */; };
 		E5E8D12F1A27861E009386DE /* CEMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12D1A27861E009386DE /* CEMDefinitions.m */; };
@@ -107,6 +108,7 @@
 		E5CB39AD1A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_UserProfileSettings@2x.png"; sourceTree = "<group>"; };
 		E5CB39B31A29064800DD0D7A /* ic_Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_Settings.png; sourceTree = "<group>"; };
 		E5CB39B41A29064800DD0D7A /* ic_Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Settings@2x.png"; sourceTree = "<group>"; };
+		E5CB39BA1A291BE500DD0D7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E5E8D1271A278486009386DE /* CQABaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQABaseApi.h; sourceTree = "<group>"; };
 		E5E8D1281A278486009386DE /* CQABaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQABaseApi.m; sourceTree = "<group>"; };
 		E5E8D1291A278486009386DE /* CEMElMundoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEMElMundoApi.h; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				E50679561A235D6700F39808 /* Info.plist */,
 				E50679571A235D6700F39808 /* main.m */,
 				E5E8D1301A2789F8009386DE /* ElMundo-PrefixHeader.pch */,
+				E5CB39BB1A291BE500DD0D7A /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */,
 				E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */,
 				E5CB399B1A28E2B200DD0D7A /* El_Mundoapp_palette.jpg in Resources */,
+				E5CB39B91A291BE500DD0D7A /* Localizable.strings in Resources */,
 				E5CB39B11A2904AE00DD0D7A /* ic_UserProfileSettings.png in Resources */,
 				E5CB399D1A28E75600DD0D7A /* MuseoSans_300.otf in Resources */,
 				E5CB39B01A2904AE00DD0D7A /* ic_TabNavMainSearch@2x.png in Resources */,
@@ -487,6 +491,14 @@
 				E50679681A235D6700F39808 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		E5CB39BB1A291BE500DD0D7A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5CB39BA1A291BE500DD0D7A /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

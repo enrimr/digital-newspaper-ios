@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  elmundo
+
+  Created by Enrique Ismael Mendoza Robaina on 28/11/14.
+  Copyright (c) 2014 cuaQea SL. All rights reserved.
+*/
+// Channels
+"espana" = "España";
+"ciencia" = "Ciencia";
+"economia" = "Economía";
+"internacional" = "Internacional";
+"albumes" = "Álbumes";
+"portada" = "Portada";
+"elmundo" = "El Mundo";
+"union_europea" = "Unión Europea";
+"cultura" = "Cultura";
+"madrid" = "Madrid";
+"barcelona" = "Barcelona";
+"baleares" = "Baleares";
+"castillayleon" = "Castilla y León";
+"valladolid" = "Valladolid";
+"valencia" = "Valencia";
+"alicante" = "Alicante";
+"castellon" = "Castellón";
+"paisvasco" = "País Vasco";
+"andalucia" = "Andalucía";
+"andalucia_sevilla" = "Sevilla";
+"andalucia_malaga" = "Málaga";
+"solidaridad" = "Solidaridad";
+"comunicacion" = "Comunicación";
+"television" = "TV";
+"suvivienda" = "Vivienda";
+"deportes" = "Deportes";
+"futbol" = "Fútbol";
+"baloncesto" = "Baloncesto";
+"ciclismo" = "Ciclismo";
+"golf" = "Golf";
+"motor" = "Motor";
+"masdeporte" = "Más deporte";
+"marca" = "Marca";
+"expansion" = "Expansión";
+"telva" = "Telva";
+"yodona" = "YoDona";

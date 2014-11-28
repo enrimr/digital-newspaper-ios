@@ -156,13 +156,22 @@ static NSString * const reuseIdentifier = @"Cell";
                                                                30)];
         [label setTextColor:[UIColor whiteColor]];
     
-        [label setText:[item objectForKey:@"channel"]];
+        [label setText:NSLocalizedString([item objectForKey:@"channel"],nil)];
     
         [label setFont:[UIFont fontWithName:@"MuseoSans-700" size:fontSize]];
         [label setNumberOfLines:0];
         [label sizeToFit];
         [label setLineBreakMode:NSLineBreakByTruncatingTail];
   
+        // Image
+        /*UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+         0,
+         cell.frame.size.width,
+         cell.frame.size.height)];*/
+        UIImageView *backgroundTitle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"boxTitle-small"]];
+        [backgroundTitle setFrame:CGRectMake(0, cell.frame.size.height - 50, cell.frame.size.width, 50)];
+        
+        [cell addSubview:backgroundTitle];
         [cell addSubview:label];
     
         
