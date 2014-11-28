@@ -20,15 +20,15 @@ static NSString * const reuseIdentifier = @"Cell";
            articles:(NSArray *)arrayOfArticles
          backButton:(BOOL)showBackButton
 {
-    if (self = [super initWithNibName:nil bundle:nil]) {
+    
+    UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    //flowLayout.itemSize = CGSizeMake(200, 200);
+    [flowLayout setSectionInset:UIEdgeInsetsMake(10, 10, 10, 10)];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    if (self = [super initWithCollectionViewLayout:flowLayout]) {
         _tableElements = arrayOfArticles;
         _backButton = showBackButton;
-        self.title = aTitle;
-        /*UITabBarItem* item = [[UITabBarItem alloc] initWithTitle:nil
-                                                           image:[UIImage imageNamed:@"ic_TabBarHome"]
-                                                   selectedImage:[UIImage imageNamed:@"ic_TabBarHome"]];
-        self.tabBarItem = item;
-        self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);*/
     }
     
     return self;
@@ -44,6 +44,34 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+    
+    [self.collectionView reloadData];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoLaunch"]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:logo];
+    
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithTitle:@"S"
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:nil];
+    
+    UIBarButtonItem *profile = [[UIBarButtonItem alloc] initWithTitle:@"P"
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:nil];
+    
+    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithTitle:@"M"
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:nil];
+    
+    self.navigationItem.rightBarButtonItems = @[menu, profile, search];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,21 +92,38 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (![_tableElements isEqual:[NSNull alloc]]){
+    /*if (![_tableElements isEqual:[NSNull alloc]]){
         return (int)[_tableElements count];
-    }
-    return 0;
+    }*/
+    return 30;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
+                                                                           forIndexPath:indexPath];
     
     // Configure the cell
+    [cell setBackgroundColor:[UIColor redColor]];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10,
+                                                               cell.frame.size.height - 32,
+                                                               cell.frame.size.width - 20,
+                                                               30)];
+    
+    // Clean the subviews
+    for (UIView *subview in [cell subviews])
+    {
+        [subview removeFromSuperview];
+    }
+    
+    [label setText:@"El Mundo social"];
+    [label setFont:[UIFont fontWithName:@"MuseoSans-900" size:18.0]];
+    [label setTag:indexPath.row];
+    [cell addSubview:label];
     
     return cell;
 }
@@ -113,5 +158,26 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0){
+        return CGSizeMake(300, 200);
+    } else if (indexPath.row == 1){
+        return CGSizeMake(200, 92);
+    } else if (indexPath.row == 2){
+        return CGSizeMake(90, 92);
+    } else if (indexPath.row == 3){
+        return CGSizeMake(92, 92);
+    } else if (indexPath.row == 4){
+        return CGSizeMake(195, 92);
+    }/* else if (indexPath.row % 3 == 0){
+        return CGSizeMake(100, 100);
+    } else if (indexPath.row % 3 == 1) {
+        return CGSizeMake(200, 100);
+    } else if (indexPath.row % 3 == 2) {
+        return CGSizeMake(200, 200);
+    }*/
+    return CGSizeMake(92, 92);
+}
 
 @end

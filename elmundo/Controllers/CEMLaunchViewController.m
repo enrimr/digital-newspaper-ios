@@ -73,14 +73,48 @@
                                            voteCount:0
                                                   ad:nil];
     
-    NSArray *articles = @[article1,article2,article3];
+    CEMArticle *article4 = [CEMArticle articleWithId:@"4"
+                                               title:@"NEy ey ey"
+                                                text:@"4Con motivo de las II Jornadas Mamací (Mamas, Matronas y Cine),  que tendrán lugar los días 28 y 29 de noviembre en los multicines Monopol, las matronas especialistas en parto natural y lactancia, Goretti Martel y Sara Barreto, responderán este jueves a partir de las 13.00 horas las dudas de los lectores de laprovincia.es en un encuentro digital.¿Se puede dar a luz por parto natural después de haber tenido una césarea? ¿Cuáles son los beneficios de un parto en casa?. ¿Cuántos meses se recomienda la lactancia materna exclusiva? Envía tus dudas a las matronas."
+                                                 url:@"http://www.elmundo.es/?cuaqea"
+                                             creator:@"Enrique Mendoza"
+                                                guid:@"www.1"
+                                          categories:@[@"política", @"deporte"]
+                                     publicationDate:[NSDate date]
+                                           channelId:@"Internacional - El Mundo"
+                                         textSummary:@"Chanante ipsum dolor sit amet, bonico del tó quis zagal bizcoché bocachoti cabeza de viejo cuerpo de joven, gaticos magna viejuno. A tope con la maquinaria, ut ad fresquete páharo, labore soooy crossoverr con las rodillas in the guanter estoy fatal de lo mío ea freshquisimo..."
+                                              images:nil
+                                              videos:nil
+                                       commentsCount:0
+                                            comments:nil
+                                         sharedCount:0
+                                           voteCount:0
+                                                  ad:nil];
+    
+    CEMArticle *article5 = [CEMArticle articleWithId:@"5"
+                                               title:@"Nueva noticia 123 super guay"
+                                                text:@"5Con motivo de las II Jornadas Mamací (Mamas, Matronas y Cine),  que tendrán lugar los días 28 y 29 de noviembre en los multicines Monopol, las matronas especialistas en parto natural y lactancia, Goretti Martel y Sara Barreto, responderán este jueves a partir de las 13.00 horas las dudas de los lectores de laprovincia.es en un encuentro digital.¿Se puede dar a luz por parto natural después de haber tenido una césarea? ¿Cuáles son los beneficios de un parto en casa?. ¿Cuántos meses se recomienda la lactancia materna exclusiva? Envía tus dudas a las matronas."
+                                                 url:@"http://www.elmundo.es/?cuaqea"
+                                             creator:@"Enrique Mendoza"
+                                                guid:@"www.1"
+                                          categories:@[@"política", @"deporte"]
+                                     publicationDate:[NSDate date]
+                                           channelId:@"Internacional - El Mundo"
+                                         textSummary:@"Chanante ipsum dolor sit amet, bonico del tó quis zagal bizcoché bocachoti cabeza de viejo cuerpo de joven, gaticos magna viejuno. A tope con la maquinaria, ut ad fresquete páharo, labore soooy crossoverr con las rodillas in the guanter estoy fatal de lo mío ea freshquisimo..."
+                                              images:nil
+                                              videos:nil
+                                       commentsCount:0
+                                            comments:nil
+                                         sharedCount:0
+                                           voteCount:0
+                                                  ad:nil];
+    
+    NSArray *articles = @[article1, article2, article3, article4, article5];
 
     CEMNewsCollectionViewController *articlesVC = [[CEMNewsCollectionViewController alloc] initWithTitle:@"El Mundo"
                                                                                              articles:articles
                                                                                            backButton:NO];
-    // Combinadores
-    UINavigationController *elMundoNav = [[UINavigationController alloc] initWithRootViewController:articlesVC];
-    [[self navigationController] pushViewController:elMundoNav animated:YES];
+    [[self navigationController] pushViewController:articlesVC animated:YES];
 
 }
 
@@ -90,6 +124,7 @@
     [_spinner startAnimating];
     self.navigationController.navigationBar.hidden = YES;
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    self.navigationController.navigationItem.hidesBackButton = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -97,7 +132,9 @@
     [super viewWillDisappear:animated];
     [_spinner stopAnimating];
     self.navigationController.navigationBar.hidden = NO;
+    self.navigationController.navigationBar.translucent = YES;
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    self.navigationController.navigationItem.hidesBackButton = YES;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -27,6 +27,11 @@
 		E50FD7731A24A7F90026EC43 /* CEMAd.m in Sources */ = {isa = PBXBuildFile; fileRef = E50FD7721A24A7F90026EC43 /* CEMAd.m */; };
 		E50FD7771A24B20C0026EC43 /* CEMNewsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E50FD7751A24B20C0026EC43 /* CEMNewsCollectionViewController.m */; };
 		E50FD7781A24B20C0026EC43 /* CEMNewsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E50FD7761A24B20C0026EC43 /* CEMNewsCollectionViewController.xib */; };
+		E5CB39971A28E2B200DD0D7A /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39911A28E2B200DD0D7A /* MuseoSans-300.otf */; };
+		E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */; };
+		E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */; };
+		E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */; };
+		E5CB399B1A28E2B200DD0D7A /* El_Mundoapp_palette.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39961A28E2B200DD0D7A /* El_Mundoapp_palette.jpg */; };
 		E5E8D12B1A278486009386DE /* CQABaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D1281A278486009386DE /* CQABaseApi.m */; };
 		E5E8D12C1A278486009386DE /* CEMElMundoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12A1A278486009386DE /* CEMElMundoApi.m */; };
 		E5E8D12F1A27861E009386DE /* CEMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12D1A27861E009386DE /* CEMDefinitions.m */; };
@@ -73,6 +78,11 @@
 		E50FD7741A24B20C0026EC43 /* CEMNewsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMNewsCollectionViewController.h; path = Controllers/CEMNewsCollectionViewController.h; sourceTree = "<group>"; };
 		E50FD7751A24B20C0026EC43 /* CEMNewsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMNewsCollectionViewController.m; path = Controllers/CEMNewsCollectionViewController.m; sourceTree = "<group>"; };
 		E50FD7761A24B20C0026EC43 /* CEMNewsCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CEMNewsCollectionViewController.xib; path = Controllers/CEMNewsCollectionViewController.xib; sourceTree = "<group>"; };
+		E5CB39911A28E2B200DD0D7A /* MuseoSans-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300.otf"; sourceTree = "<group>"; };
+		E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
+		E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
+		E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
+		E5CB39961A28E2B200DD0D7A /* El_Mundoapp_palette.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = El_Mundoapp_palette.jpg; sourceTree = "<group>"; };
 		E5E8D1271A278486009386DE /* CQABaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQABaseApi.h; sourceTree = "<group>"; };
 		E5E8D1281A278486009386DE /* CQABaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQABaseApi.m; sourceTree = "<group>"; };
 		E5E8D1291A278486009386DE /* CEMElMundoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEMElMundoApi.h; sourceTree = "<group>"; };
@@ -183,6 +193,8 @@
 		E50679931A236A8400F39808 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39901A28E2B200DD0D7A /* Fonts */,
+				E5CB39951A28E2B200DD0D7A /* Others */,
 				E50679941A236A8400F39808 /* Images */,
 			);
 			path = Resources;
@@ -234,6 +246,25 @@
 				E50FD7721A24A7F90026EC43 /* CEMAd.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E5CB39901A28E2B200DD0D7A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB39911A28E2B200DD0D7A /* MuseoSans-300.otf */,
+				E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */,
+				E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */,
+				E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E5CB39951A28E2B200DD0D7A /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB39961A28E2B200DD0D7A /* El_Mundoapp_palette.jpg */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		E5E8D1261A278470009386DE /* Api */ = {
@@ -330,13 +361,18 @@
 			files = (
 				E506798D1A2363B600F39808 /* CEMNewsViewController.xib in Resources */,
 				E506799F1A236A8400F39808 /* logoLaunch@2x in Resources */,
+				E5CB39971A28E2B200DD0D7A /* MuseoSans-300.otf in Resources */,
 				E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */,
 				E506799E1A236A8400F39808 /* logoLaunch in Resources */,
 				E50679A01A236A8400F39808 /* logoLaunch@3x.png in Resources */,
+				E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */,
+				E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */,
+				E5CB399B1A28E2B200DD0D7A /* El_Mundoapp_palette.jpg in Resources */,
 				E50679A11A236A8400F39808 /* logoNav in Resources */,
 				E50679661A235D6700F39808 /* Images.xcassets in Resources */,
 				E50679A31A236A8400F39808 /* logoNav@3x in Resources */,
 				E50679A21A236A8400F39808 /* logoNav@2x in Resources */,
+				E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */,
 				E50679921A23674D00F39808 /* CEMLaunchViewController.xib in Resources */,
 				E50FD7781A24B20C0026EC43 /* CEMNewsCollectionViewController.xib in Resources */,
 			);
