@@ -8,7 +8,7 @@
 
 #import "CEMDefinitions.h"
 
-NSString *const URL_API = @"http://api.cuaqea.com";
+NSString *const URL_API = @"http://cuaqeadev.cloudapp.net:9000";
 NSString *const URL_SHARE_ARTICLE = @"http://cqa.es/c/";
 
 NSTimeInterval const ALERT_TIME = 3.0;

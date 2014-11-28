@@ -66,6 +66,16 @@
            withSuccess:(SEL)successCallback
             andFailure:(SEL)failureCallback;
 
+/** GET: /api/1/channels/{userId} */
+- (void) channels:(NSString *)userId
+         calledBy:(id)calledBy
+      withSuccess:(SEL)successCallback;
+
+- (void) channels:(NSString *)userId
+         calledBy:(id)calledBy
+      withSuccess:(SEL)successCallback
+       andFailure:(SEL)failureCallback;
+
 
 #pragma mark -
 #pragma mark Failure Callbacks

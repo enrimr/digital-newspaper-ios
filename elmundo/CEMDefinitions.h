@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CQAAppSettingsDefinitions.h"
 
 FOUNDATION_EXPORT NSString *const URL_API;
 FOUNDATION_EXPORT NSString *const URL_SHARE_ARTICLE;
+
 #pragma mark Settings
 
 FOUNDATION_EXPORT NSTimeInterval const ALERT_TIME;
@@ -34,6 +36,6 @@ FOUNDATION_EXPORT NSString *const BACK_BUTTON;
 FOUNDATION_EXPORT NSString *const BACK_BUTTON_HOVER;
 
 
-@interface CEMDefinitions : NSObject
+@interface CEMDefinitions : CQAAppSettingsDefinitions
 
 @end

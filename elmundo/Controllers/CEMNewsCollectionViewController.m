@@ -97,22 +97,17 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    /*if (![_tableElements isEqual:[NSNull alloc]]){
+    if (![_tableElements isEqual:[NSNull alloc]]){
         return (int)[_tableElements count];
-    }*/
-    return 30;
+    }
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
                                                                            forIndexPath:indexPath];
     
-    // Configure the cell
-    [cell setBackgroundColor:[UIColor redColor]];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10,
-                                                               cell.frame.size.height - 32,
-                                                               cell.frame.size.width - 20,
-                                                               30)];
+    NSDictionary *item = [_tableElements objectAtIndex:indexPath.row];
     
     // Clean the subviews
     for (UIView *subview in [cell subviews])
@@ -120,10 +115,48 @@ static NSString * const reuseIdentifier = @"Cell";
         [subview removeFromSuperview];
     }
     
-    [label setText:@"El Mundo social"];
-    [label setFont:[UIFont fontWithName:@"MuseoSans-900" size:18.0]];
-    [label setTag:indexPath.row];
+    // Configure the cell
+    
+    // Image
+    NSURL *imageUrl = [NSURL URLWithString:[item objectForKey:@"image"]];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+    /*UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+                                                                           0,
+                                                                           cell.frame.size.width,
+                                                                           cell.frame.size.height)];*/
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
+    //[imageView setContentMode:UIViewContentModeScaleAspectFill];
+    //[imageView setImage:[UIImage imageWithData:imageData]];
+    
+    // Channel title
+    [cell setBackgroundColor:[UIColor grayColor]];
+    
+    float fontSize = 14.0;
+    float bottom = 0;
+    if (cell.frame.size.width > 205) {
+        fontSize += 6;
+    } else if (cell.frame.size.width > 95) {
+        fontSize += 3;
+        bottom = 4;
+    } else {
+        bottom = 8;
+    }
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10,
+                                                               cell.frame.size.height - 32 + bottom,
+                                                               cell.frame.size.width - 0,
+                                                               30)];
+    [label setTextColor:[UIColor whiteColor]];
+    
+    [label setText:[item objectForKey:@"channel"]];
+    
+    [label setFont:[UIFont fontWithName:@"MuseoSans-700" size:fontSize]];
+    [label setNumberOfLines:0];
+    [label sizeToFit];
+    
     [cell addSubview:label];
+    
+    [cell setBackgroundView:imageView];
     
     return cell;
 }
@@ -161,12 +194,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0){
-        return CGSizeMake(300, 200);
+        return CGSizeMake(300, 150);
     } else if (indexPath.row == 1){
         return CGSizeMake(200, 92);
     } else if (indexPath.row == 2){
         return CGSizeMake(90, 92);
     } else if (indexPath.row == 3){
+        return CGSizeMake(145, 92);
+    } else if (indexPath.row == 4){
+        return CGSizeMake(145, 92);
+    } else if (indexPath.row == 4){
         return CGSizeMake(92, 92);
     } else if (indexPath.row == 4){
         return CGSizeMake(195, 92);
