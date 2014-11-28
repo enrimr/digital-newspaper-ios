@@ -27,8 +27,12 @@ static NSString * const reuseIdentifier = @"Cell";
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     if (self = [super initWithCollectionViewLayout:flowLayout]) {
-        _tableElements = arrayOfArticles;
         _backButton = showBackButton;
+        NSMutableArray *arrayWithAdd = [NSMutableArray arrayWithArray:arrayOfArticles];
+        [arrayWithAdd addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                 @"", @"channel",
+                                 @"addButton", @"image", nil]];
+        _tableElements = [NSArray arrayWithArray:arrayWithAdd];
     }
     
     return self;
@@ -55,20 +59,23 @@ static NSString * const reuseIdentifier = @"Cell";
     UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoLaunch"]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:logo];
     
-    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithTitle:@"S"
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_TabNavMainSearch"]
                                                                style:UIBarButtonItemStylePlain
                                                               target:self
                                                               action:nil];
+    [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -75)];
     
-    UIBarButtonItem *profile = [[UIBarButtonItem alloc] initWithTitle:@"P"
+    UIBarButtonItem *profile = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_UserProfileSettings"]
                                                                 style:UIBarButtonItemStylePlain
                                                                target:self
                                                                action:nil];
+    [profile setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -35)];
     
-    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithTitle:@"M"
+    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_Settings"]
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:nil];
+    [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
     
     self.navigationItem.rightBarButtonItems = @[menu, profile, search];
     
@@ -116,45 +123,50 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     
     // Configure the cell
-    
-    // Image
-    NSURL *imageUrl = [NSURL URLWithString:[item objectForKey:@"image"]];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-    /*UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
+    UIImageView *imageView;
+    if (indexPath.row == (int)[_tableElements count]-1){
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[item objectForKey:@"image"]]];
+    } else {
+        // Image
+        NSURL *imageUrl = [NSURL URLWithString:[item objectForKey:@"image"]];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+        /*UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,
                                                                            0,
                                                                            cell.frame.size.width,
                                                                            cell.frame.size.height)];*/
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
-    //[imageView setContentMode:UIViewContentModeScaleAspectFill];
-    //[imageView setImage:[UIImage imageWithData:imageData]];
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
     
-    // Channel title
-    [cell setBackgroundColor:[UIColor grayColor]];
+        // Channel title
+        [cell setBackgroundColor:[UIColor grayColor]];
     
-    float fontSize = 14.0;
-    float bottom = 0;
-    if (cell.frame.size.width > 205) {
-        fontSize += 6;
-    } else if (cell.frame.size.width > 95) {
-        fontSize += 3;
-        bottom = 4;
-    } else {
-        bottom = 8;
-    }
+        float fontSize = 14.0;
+        float bottom = 0;
+        if (cell.frame.size.width > 205) {
+            fontSize += 6;
+        } else if (cell.frame.size.width > 95) {
+            fontSize += 3;
+            bottom = 4;
+        } else {
+            bottom = 8;
+        }
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10,
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10,
                                                                cell.frame.size.height - 32 + bottom,
-                                                               cell.frame.size.width - 0,
+                                                               cell.frame.size.width - 10,
                                                                30)];
-    [label setTextColor:[UIColor whiteColor]];
+        [label setTextColor:[UIColor whiteColor]];
     
-    [label setText:[item objectForKey:@"channel"]];
+        [label setText:[item objectForKey:@"channel"]];
     
-    [label setFont:[UIFont fontWithName:@"MuseoSans-700" size:fontSize]];
-    [label setNumberOfLines:0];
-    [label sizeToFit];
+        [label setFont:[UIFont fontWithName:@"MuseoSans-700" size:fontSize]];
+        [label setNumberOfLines:0];
+        [label sizeToFit];
+        [label setLineBreakMode:NSLineBreakByTruncatingTail];
+  
+        [cell addSubview:label];
     
-    [cell addSubview:label];
+        
+    }
     
     [cell setBackgroundView:imageView];
     

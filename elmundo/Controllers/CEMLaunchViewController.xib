@@ -16,10 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-SM-bDe">
-                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                    <rect key="frame" x="150" y="361" width="20" height="20"/>
+                    <color key="color" red="0.76470588240000004" green="0.77647058820000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="kYt-2Z-8bC">
-                    <rect key="frame" x="79" y="190" width="162" height="22"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Sh-iY-yUX">
+                    <rect key="frame" x="110" y="150" width="102" height="110"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -27,7 +28,7 @@
         </view>
     </objects>
     <resources>
-        <image name="logoLaunch" width="163" height="22"/>
+        <image name="logoSplash.png" width="204" height="220"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

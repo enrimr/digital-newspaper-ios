@@ -34,6 +34,15 @@
 		E5CB399D1A28E75600DD0D7A /* MuseoSans_300.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB399C1A28E75600DD0D7A /* MuseoSans_300.otf */; };
 		E5CB39A01A28EE8600DD0D7A /* CQAAppSettingsDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB399F1A28EE8600DD0D7A /* CQAAppSettingsDefinitions.m */; };
 		E5CB39A41A28EFC200DD0D7A /* CQAAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB39A31A28EFC200DD0D7A /* CQAAppSettings.m */; };
+		E5CB39A61A28FFDF00DD0D7A /* logoSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39A51A28FFDF00DD0D7A /* logoSplash.png */; };
+		E5CB39A81A29022500DD0D7A /* boxTitle-small in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39A71A29022500DD0D7A /* boxTitle-small */; };
+		E5CB39AE1A2904AE00DD0D7A /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39A91A2904AE00DD0D7A /* addButton.png */; };
+		E5CB39AF1A2904AE00DD0D7A /* ic_TabNavMainSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39AA1A2904AE00DD0D7A /* ic_TabNavMainSearch.png */; };
+		E5CB39B01A2904AE00DD0D7A /* ic_TabNavMainSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39AB1A2904AE00DD0D7A /* ic_TabNavMainSearch@2x.png */; };
+		E5CB39B11A2904AE00DD0D7A /* ic_UserProfileSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39AC1A2904AE00DD0D7A /* ic_UserProfileSettings.png */; };
+		E5CB39B21A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39AD1A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png */; };
+		E5CB39B51A29064800DD0D7A /* ic_Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39B31A29064800DD0D7A /* ic_Settings.png */; };
+		E5CB39B61A29064800DD0D7A /* ic_Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39B41A29064800DD0D7A /* ic_Settings@2x.png */; };
 		E5E8D12B1A278486009386DE /* CQABaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D1281A278486009386DE /* CQABaseApi.m */; };
 		E5E8D12C1A278486009386DE /* CEMElMundoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12A1A278486009386DE /* CEMElMundoApi.m */; };
 		E5E8D12F1A27861E009386DE /* CEMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12D1A27861E009386DE /* CEMDefinitions.m */; };
@@ -89,6 +98,15 @@
 		E5CB399F1A28EE8600DD0D7A /* CQAAppSettingsDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQAAppSettingsDefinitions.m; sourceTree = "<group>"; };
 		E5CB39A21A28EFC200DD0D7A /* CQAAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CQAAppSettings.h; path = Utils/CQAAppSettings.h; sourceTree = "<group>"; };
 		E5CB39A31A28EFC200DD0D7A /* CQAAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CQAAppSettings.m; path = Utils/CQAAppSettings.m; sourceTree = "<group>"; };
+		E5CB39A51A28FFDF00DD0D7A /* logoSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSplash.png; sourceTree = "<group>"; };
+		E5CB39A71A29022500DD0D7A /* boxTitle-small */ = {isa = PBXFileReference; lastKnownFileType = file; path = "boxTitle-small"; sourceTree = "<group>"; };
+		E5CB39A91A2904AE00DD0D7A /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
+		E5CB39AA1A2904AE00DD0D7A /* ic_TabNavMainSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_TabNavMainSearch.png; sourceTree = "<group>"; };
+		E5CB39AB1A2904AE00DD0D7A /* ic_TabNavMainSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_TabNavMainSearch@2x.png"; sourceTree = "<group>"; };
+		E5CB39AC1A2904AE00DD0D7A /* ic_UserProfileSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_UserProfileSettings.png; sourceTree = "<group>"; };
+		E5CB39AD1A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_UserProfileSettings@2x.png"; sourceTree = "<group>"; };
+		E5CB39B31A29064800DD0D7A /* ic_Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_Settings.png; sourceTree = "<group>"; };
+		E5CB39B41A29064800DD0D7A /* ic_Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_Settings@2x.png"; sourceTree = "<group>"; };
 		E5E8D1271A278486009386DE /* CQABaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQABaseApi.h; sourceTree = "<group>"; };
 		E5E8D1281A278486009386DE /* CQABaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQABaseApi.m; sourceTree = "<group>"; };
 		E5E8D1291A278486009386DE /* CEMElMundoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEMElMundoApi.h; sourceTree = "<group>"; };
@@ -222,6 +240,7 @@
 		E50679951A236A8400F39808 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39A71A29022500DD0D7A /* boxTitle-small */,
 			);
 			path = Backgrounds;
 			sourceTree = "<group>";
@@ -229,6 +248,13 @@
 		E50679961A236A8400F39808 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39B31A29064800DD0D7A /* ic_Settings.png */,
+				E5CB39B41A29064800DD0D7A /* ic_Settings@2x.png */,
+				E5CB39A91A2904AE00DD0D7A /* addButton.png */,
+				E5CB39AA1A2904AE00DD0D7A /* ic_TabNavMainSearch.png */,
+				E5CB39AB1A2904AE00DD0D7A /* ic_TabNavMainSearch@2x.png */,
+				E5CB39AC1A2904AE00DD0D7A /* ic_UserProfileSettings.png */,
+				E5CB39AD1A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -236,6 +262,7 @@
 		E50679971A236A8400F39808 /* Logos */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39A51A28FFDF00DD0D7A /* logoSplash.png */,
 				E50679981A236A8400F39808 /* logoLaunch */,
 				E50679991A236A8400F39808 /* logoLaunch@2x */,
 				E506799A1A236A8400F39808 /* logoLaunch@3x.png */,
@@ -378,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E506798D1A2363B600F39808 /* CEMNewsViewController.xib in Resources */,
+				E5CB39A81A29022500DD0D7A /* boxTitle-small in Resources */,
 				E506799F1A236A8400F39808 /* logoLaunch@2x in Resources */,
 				E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */,
 				E506799E1A236A8400F39808 /* logoLaunch in Resources */,
@@ -385,14 +413,22 @@
 				E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */,
 				E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */,
 				E5CB399B1A28E2B200DD0D7A /* El_Mundoapp_palette.jpg in Resources */,
+				E5CB39B11A2904AE00DD0D7A /* ic_UserProfileSettings.png in Resources */,
 				E5CB399D1A28E75600DD0D7A /* MuseoSans_300.otf in Resources */,
+				E5CB39B01A2904AE00DD0D7A /* ic_TabNavMainSearch@2x.png in Resources */,
 				E50679A11A236A8400F39808 /* logoNav in Resources */,
+				E5CB39B21A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png in Resources */,
 				E50679661A235D6700F39808 /* Images.xcassets in Resources */,
+				E5CB39B61A29064800DD0D7A /* ic_Settings@2x.png in Resources */,
+				E5CB39AF1A2904AE00DD0D7A /* ic_TabNavMainSearch.png in Resources */,
 				E50679A31A236A8400F39808 /* logoNav@3x in Resources */,
+				E5CB39A61A28FFDF00DD0D7A /* logoSplash.png in Resources */,
 				E50679A21A236A8400F39808 /* logoNav@2x in Resources */,
 				E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */,
 				E50679921A23674D00F39808 /* CEMLaunchViewController.xib in Resources */,
 				E50FD7781A24B20C0026EC43 /* CEMNewsCollectionViewController.xib in Resources */,
+				E5CB39B51A29064800DD0D7A /* ic_Settings.png in Resources */,
+				E5CB39AE1A2904AE00DD0D7A /* addButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

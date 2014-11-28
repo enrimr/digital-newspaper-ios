@@ -62,7 +62,8 @@
 {
     NSLog(@"channelsDidEnd");
 
-    NSArray *articles = [NSArray arrayWithArray:(NSArray *)result];
+    NSMutableArray *articles = [[NSArray arrayWithArray:(NSArray *)result] mutableCopy];
+    [articles addObjectsFromArray:articles];
     
     CEMNewsCollectionViewController *articlesVC = [[CEMNewsCollectionViewController alloc] initWithTitle:@"El Mundo"
                                                                                                 articles:articles
