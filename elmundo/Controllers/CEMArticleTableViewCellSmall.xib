@@ -6,6 +6,7 @@
     <customFonts key="customFonts">
         <mutableArray key="MuseoSans_500.otf">
             <string>MuseoSans-500</string>
+            <string>MuseoSans-500</string>
         </mutableArray>
         <mutableArray key="MuseoSans_900.otf">
             <string>MuseoSans-900</string>
@@ -21,43 +22,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QbE-wv-5ow">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-Lp-kle">
+                        <rect key="frame" x="8" y="8" width="304" height="98"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-Lp-kle">
-                                <rect key="frame" x="8" y="8" width="304" height="98"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kwb-3Z-9sf">
-                                        <rect key="frame" x="7" y="7" width="83" height="83"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P2-BU-46B">
-                                        <rect key="frame" x="95" y="26" width="201" height="64"/>
-                                        <fontDescription key="fontDescription" name="MuseoSans-900" family="Museo Sans" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLZ-0y-dcs">
-                                        <rect key="frame" x="254" y="3" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="11"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-nV-QAs">
-                                        <rect key="frame" x="14" y="15" width="20" height="20"/>
-                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kwb-3Z-9sf">
+                                <rect key="frame" x="4" y="4" width="90" height="90"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label Label Label Label Label Label Label Label Label Label Label Label Label " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P2-BU-46B">
+                                <rect key="frame" x="105" y="15" width="197" height="42"/>
+                                <fontDescription key="fontDescription" name="MuseoSans-900" family="Museo Sans" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLZ-0y-dcs">
+                                <rect key="frame" x="105" y="-1" width="47" height="21"/>
+                                <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="11"/>
+                                <color key="textColor" red="0.76470588240000004" green="0.77647058820000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-nV-QAs">
+                                <rect key="frame" x="8" y="8" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pme-f3-KT6">
+                                <rect key="frame" x="105" y="54" width="197" height="44"/>
+                                <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label </string>
+                                <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.95070929276315785" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.80784313730000001" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="articleDate" destination="jLZ-0y-dcs" id="ZuV-nA-ySV"/>
                 <outlet property="articleImage" destination="Kwb-3Z-9sf" id="RZq-2f-b7n"/>
+                <outlet property="articleText" destination="pme-f3-KT6" id="1UN-me-J2m"/>
                 <outlet property="articleTitle" destination="7P2-BU-46B" id="VxT-f8-0Oe"/>
                 <outlet property="spinner" destination="1cA-nV-QAs" id="TKS-C7-BAP"/>
             </connections>

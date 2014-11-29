@@ -7,6 +7,10 @@
         <mutableArray key="MuseoSans_500.otf">
             <string>MuseoSans-500</string>
         </mutableArray>
+        <mutableArray key="MuseoSans_700.otf">
+            <string>MuseoSans-700</string>
+            <string>MuseoSans-700</string>
+        </mutableArray>
         <mutableArray key="MuseoSans_900.otf">
             <string>MuseoSans-900</string>
         </mutableArray>
@@ -25,11 +29,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boxTitle-small" translatesAutoresizingMaskIntoConstraints="NO" id="FlL-Yu-Des">
-                        <rect key="frame" x="0.0" y="142" width="320" height="86"/>
+                        <rect key="frame" x="0.0" y="130" width="320" height="90"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-Y5-eae">
-                        <rect key="frame" x="14" y="170" width="298" height="42"/>
-                        <fontDescription key="fontDescription" name="MuseoSans-900" family="Museo Sans" pointSize="15"/>
+                        <rect key="frame" x="14" y="170" width="235" height="42"/>
+                        <fontDescription key="fontDescription" name="MuseoSans-900" family="Museo Sans" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,10 +43,25 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E2R-lH-Fjt">
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E2R-lH-Fjt">
                         <rect key="frame" x="8" y="8" width="20" height="20"/>
                         <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </activityIndicatorView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Última hora" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klu-NW-1l9">
+                        <rect key="frame" x="14" y="148" width="197" height="21"/>
+                        <fontDescription key="fontDescription" name="MuseoSans-700" family="Museo Sans" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBS-cT-Fhc">
+                        <rect key="frame" x="250" y="180" width="27" height="21"/>
+                        <fontDescription key="fontDescription" name="MuseoSans-700" family="Museo Sans" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="El_Mundoapp_palette.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="B95-Tq-uXP">
+                        <rect key="frame" x="281" y="178" width="25" height="25"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="320" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -50,12 +69,15 @@
                 <outlet property="articleDate" destination="E3J-rX-G6x" id="gfx-mV-niN"/>
                 <outlet property="articleImage" destination="Aa5-UZ-RC6" id="b1b-fv-Y0e"/>
                 <outlet property="articleTitle" destination="dfS-Y5-eae" id="xNH-j2-eck"/>
+                <outlet property="lastHour" destination="Klu-NW-1l9" id="DEO-Jm-bKG"/>
+                <outlet property="socialCount" destination="dBS-cT-Fhc" id="AsY-er-PW8"/>
                 <outlet property="spinner" destination="E2R-lH-Fjt" id="rKJ-V9-x2O"/>
             </connections>
             <point key="canvasLocation" x="345" y="231"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="El_Mundoapp_palette.jpg" width="585" height="1024"/>
         <image name="boxTitle-small" width="106" height="45"/>
         <image name="imageBackground.png" width="360" height="640"/>
     </resources>

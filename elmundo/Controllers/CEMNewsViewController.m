@@ -154,7 +154,7 @@
         }
         
         
-        
+        [cell.articleText setText:[item objectForKey:@"text"]];
         [cell.articleTitle setText:[item objectForKey:@"title"]];
         
         // Calculamos el timestamp
