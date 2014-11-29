@@ -58,7 +58,7 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     
-    self.navigationItem.title = self.title;
+    self.navigationController.navigationItem.title = self.title;
     
     self.navigationItem.leftBarButtonItem =
     [[UIBarButtonItem alloc] initWithImage:[[UIImage alloc] init]
@@ -273,7 +273,8 @@ static NSString * const reuseIdentifier = @"Cell";
             //NSLog([NSString stringWithFormat:@"%d", indexPath.row]);
             selectedChannelName = [[_tableElements objectAtIndex:indexPath.row] objectForKey:@"creator"];
             
-            [[CEMElMundoApi alloc] newsByCreator:selectedChannelName
+            NSString *creatorWithSpace = [selectedChannelName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            [[CEMElMundoApi alloc] newsByCreator:creatorWithSpace
                                           userId:@"userId"
                                         calledBy:self
                                      withSuccess:@selector(newsByChannelDidEnd:)

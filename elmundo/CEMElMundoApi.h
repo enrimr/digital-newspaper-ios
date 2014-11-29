@@ -76,6 +76,16 @@
       withSuccess:(SEL)successCallback
        andFailure:(SEL)failureCallback;
 
+/** GET: /api/1/creators/{userId} */
+- (void) creators:(NSString *)userId
+         calledBy:(id)calledBy
+      withSuccess:(SEL)successCallback;
+
+- (void) creators:(NSString *)userId
+         calledBy:(id)calledBy
+      withSuccess:(SEL)successCallback
+       andFailure:(SEL)failureCallback;
+
 
 /** PUT: /api/1/voteArticle/{userId}/{articleId}/{voteValue} */
 - (void) voteArticle:(NSString *)articleId

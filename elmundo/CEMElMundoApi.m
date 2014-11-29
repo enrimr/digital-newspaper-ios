@@ -179,6 +179,10 @@
            withSuccess:(SEL)successCallback
             andFailure:(SEL)failureCallback
 {
+    NSLog([NSString stringWithFormat:@"%@/api/1/newsByCreator/%@/%@",
+           URL_API,
+           userId,
+           creator]);
     [self placeGetRequestWithURL:[NSString stringWithFormat:@"%@/api/1/newsByCreator/%@/%@",
                                   URL_API,
                                   userId,
@@ -226,6 +230,50 @@
        andFailure:(SEL)failureCallback
 {
     [self placeGetRequestWithURL:[NSString stringWithFormat:@"%@/api/1/channels/%@",
+                                  URL_API,
+                                  userId]
+                     withHandler:^(NSURLResponse *response, NSData *rawData, NSError *error) {
+                         
+                         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+                         NSInteger code = [httpResponse statusCode];
+                         NSLog(@"%ld", (long)code);
+                         
+                         if (code == 0){
+                             NSString *string = [[NSString alloc] initWithData:rawData
+                                                                      encoding:NSUTF8StringEncoding];
+                             NSLog(@"ERROR (%ld): %@", (long)code, string);
+                             [calledBy performSelector:failureCallback withObject:string];
+                         } else if (!(code >= 200 && code < 300)) {
+                             NSString *string = [[NSString alloc] initWithData:rawData
+                                                                      encoding:NSUTF8StringEncoding];
+                             NSLog(@"ERROR (%ld): %@", (long)code, string);
+                             [calledBy performSelector:failureCallback withObject:string];
+                         } else {
+                             NSArray *result = [NSJSONSerialization JSONObjectWithData:rawData
+                                                                               options:0
+                                                                                 error:nil];
+                             [calledBy performSelector:successCallback withObject:result];
+                         }
+                     }];
+}
+
+/** GET: /api/1/creators/{userId} */
+- (void) creators:(NSString *)userId
+         calledBy:(id)calledBy
+      withSuccess:(SEL)successCallback
+{
+    [self creators:userId
+          calledBy:calledBy
+       withSuccess:successCallback
+        andFailure:@selector(defaultFailureCallback:)];
+}
+
+- (void) creators:(NSString *)userId
+         calledBy:(id)calledBy
+      withSuccess:(SEL)successCallback
+       andFailure:(SEL)failureCallback
+{
+    [self placeGetRequestWithURL:[NSString stringWithFormat:@"%@/api/1/creators/%@",
                                   URL_API,
                                   userId]
                      withHandler:^(NSURLResponse *response, NSData *rawData, NSError *error) {
