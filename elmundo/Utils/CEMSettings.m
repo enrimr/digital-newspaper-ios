@@ -18,6 +18,8 @@
 + (void) addChannel:(NSString *)channel{
     NSMutableArray *myChannels = [[[NSUserDefaults standardUserDefaults] arrayForKey:ELMUNDO_MY_CHANNELS] mutableCopy];
     [myChannels addObject:channel];
+    [[NSUserDefaults standardUserDefaults] setObject:myChannels forKey:ELMUNDO_MY_CHANNELS];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 +(void)setChannels:(NSArray *)channels{
     [[NSUserDefaults standardUserDefaults] setObject:channels forKey:ELMUNDO_CHANNELS];

@@ -13,6 +13,7 @@
 @interface CEMNewsCollectionViewController (){
     NSString *selectedChannelName;
     BOOL isLoadingChannel;
+    NSMutableArray *moreChannels;
 }
 
 @end
@@ -149,7 +150,7 @@ static NSString * const reuseIdentifier = @"Cell";
         // Channel title
         [cell setBackgroundColor:[UIColor grayColor]];
     
-        float fontSize = 14.0;
+        float fontSize = 12.0;
         float bottom = 0;
         if (cell.frame.size.width > 205) {
             fontSize += 6;
@@ -157,7 +158,7 @@ static NSString * const reuseIdentifier = @"Cell";
             fontSize += 3;
             bottom = 4;
         } else {
-            bottom = 8;
+            bottom = 10;
         }
     
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10,
@@ -169,7 +170,7 @@ static NSString * const reuseIdentifier = @"Cell";
         [label setText:NSLocalizedString([item objectForKey:@"channel"],nil)];
     
         [label setFont:[UIFont fontWithName:@"MuseoSans-700" size:fontSize]];
-        [label setNumberOfLines:0];
+        [label setNumberOfLines:1];
         [label sizeToFit];
         [label setLineBreakMode:NSLineBreakByTruncatingTail];
   
@@ -182,8 +183,6 @@ static NSString * const reuseIdentifier = @"Cell";
         
         [cell setBackgroundView:imageView];
     }
-    
-
     
     return cell;
 }
@@ -247,15 +246,17 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"asdasd");
-    CEMNewsViewController *newsVC = [[CEMNewsViewController alloc] initWithTitle:NSLocalizedString(selectedChannelName, nil)
+
+    /*CEMNewsViewController *newsVC = [[CEMNewsViewController alloc] initWithTitle:NSLocalizedString(selectedChannelName, nil)
                                                                             news:nil
                                                                       backButton:YES
                                                                            style:UITableViewStylePlain];
     
-    [self.navigationController pushViewController:newsVC animated:YES];
-    /*if (indexPath.row == [_tableElements count] -1){
+    [self.navigationController pushViewController:newsVC animated:YES];*/
+    NSLog([NSString stringWithFormat:@"%d", indexPath.row]);
+    if (indexPath.row == [_tableElements count]-1){
         NSLog(@"Agregar categoria");
+        [self selectChannels:self];
     } else {
         if (!isLoadingChannel){
             isLoadingChannel = YES;
@@ -267,7 +268,7 @@ static NSString * const reuseIdentifier = @"Cell";
                              withSuccess:@selector(newsByChannelDidEnd:)
                               andFailure:@selector(newsByChannelFailure:)];
         }
-    }*/
+    }
 }
 
 -(void)newsByChannelDidEnd:(id)result{
@@ -289,9 +290,11 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)checkIfIsUserChannel{
     NSMutableArray *tableElementsMutable = [_tableElements mutableCopy];
     NSArray *myChannels = [CEMSettings getMyChannels];
+    moreChannels = [[NSMutableArray alloc] init];
     for (NSDictionary * channel in _tableElements) {
         if ([myChannels indexOfObject:[channel objectForKey:@"channel"]] == NSIntegerMax){
             [tableElementsMutable removeObject:channel];
+            [moreChannels addObject:channel];
         }
     }
     
@@ -304,4 +307,38 @@ static NSString * const reuseIdentifier = @"Cell";
     
     _tableElements = tableElementsMutable;
 }
+
+- (void)selectChannels:(id)sender
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Choose a new channel", nil) delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    for (NSDictionary *channel in moreChannels) {
+        [sheet addButtonWithTitle:[channel objectForKey:@"channel"]];
+    }
+    sheet.cancelButtonIndex = [sheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+    
+    UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+    if (![window.subviews containsObject:self.view]) {
+        [sheet showInView:window];
+    } else {
+        [sheet showInView:self.view];
+    }
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        [CEMSettings addChannel:[[moreChannels objectAtIndex:buttonIndex] objectForKey:@"channel"]];
+        NSMutableArray *newArray = [_tableElements mutableCopy];
+        NSDictionary *buttonAdd = [_tableElements lastObject];
+        [newArray removeObject:buttonAdd];
+        [newArray addObject:[moreChannels objectAtIndex:buttonIndex]];
+        [moreChannels removeObject:[moreChannels objectAtIndex:buttonIndex]];
+        [newArray addObject:buttonAdd];
+        _tableElements = newArray;
+        [self.collectionView reloadData];
+    }
+}
+
+
 @end

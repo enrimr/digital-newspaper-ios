@@ -55,6 +55,15 @@
 		E5CB39CD1A29266300DD0D7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CB39CC1A29266300DD0D7A /* UIKit.framework */; };
 		E5CB39D01A29269700DD0D7A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CB39CF1A29269700DD0D7A /* SDWebImage.framework */; };
 		E5CB39D31A2933A300DD0D7A /* CEMSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB39D21A2933A300DD0D7A /* CEMSettings.m */; };
+		E5CB39D81A294C5F00DD0D7A /* CEMArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB39D61A294C5F00DD0D7A /* CEMArticleTableViewCell.m */; };
+		E5CB39D91A294C5F00DD0D7A /* CEMArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39D71A294C5F00DD0D7A /* CEMArticleTableViewCell.xib */; };
+		E5CB39DB1A294CA600DD0D7A /* imageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39DA1A294CA600DD0D7A /* imageBackground.png */; };
+		E5CB39DF1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB39DD1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.m */; };
+		E5CB39E01A294E9800DD0D7A /* CEMArticleTableViewCellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39DE1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.xib */; };
+		E5CB39E31A295CAF00DD0D7A /* CQATimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB39E21A295CAF00DD0D7A /* CQATimeUtils.m */; };
+		E5CB39E61A29667500DD0D7A /* ic_TabNavBlueArrowNav.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39E41A29667500DD0D7A /* ic_TabNavBlueArrowNav.png */; };
+		E5CB39E71A29667500DD0D7A /* ic_TabNavBlueArrowNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39E51A29667500DD0D7A /* ic_TabNavBlueArrowNav@2x.png */; };
+		E5CB39EA1A29675100DD0D7A /* CQANavigationBarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB39E91A29675100DD0D7A /* CQANavigationBarUtils.m */; };
 		E5E8D12B1A278486009386DE /* CQABaseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D1281A278486009386DE /* CQABaseApi.m */; };
 		E5E8D12C1A278486009386DE /* CEMElMundoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12A1A278486009386DE /* CEMElMundoApi.m */; };
 		E5E8D12F1A27861E009386DE /* CEMDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E8D12D1A27861E009386DE /* CEMDefinitions.m */; };
@@ -132,6 +141,19 @@
 		E5CB39CF1A29269700DD0D7A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Frameworks/SDWebImage.framework; sourceTree = "<group>"; };
 		E5CB39D11A2933A300DD0D7A /* CEMSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMSettings.h; path = Utils/CEMSettings.h; sourceTree = "<group>"; };
 		E5CB39D21A2933A300DD0D7A /* CEMSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMSettings.m; path = Utils/CEMSettings.m; sourceTree = "<group>"; };
+		E5CB39D51A294C5F00DD0D7A /* CEMArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMArticleTableViewCell.h; path = Controllers/CEMArticleTableViewCell.h; sourceTree = "<group>"; };
+		E5CB39D61A294C5F00DD0D7A /* CEMArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMArticleTableViewCell.m; path = Controllers/CEMArticleTableViewCell.m; sourceTree = "<group>"; };
+		E5CB39D71A294C5F00DD0D7A /* CEMArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CEMArticleTableViewCell.xib; path = Controllers/CEMArticleTableViewCell.xib; sourceTree = "<group>"; };
+		E5CB39DA1A294CA600DD0D7A /* imageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageBackground.png; sourceTree = "<group>"; };
+		E5CB39DC1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMArticleTableViewCellSmall.h; path = Controllers/CEMArticleTableViewCellSmall.h; sourceTree = "<group>"; };
+		E5CB39DD1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMArticleTableViewCellSmall.m; path = Controllers/CEMArticleTableViewCellSmall.m; sourceTree = "<group>"; };
+		E5CB39DE1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CEMArticleTableViewCellSmall.xib; path = Controllers/CEMArticleTableViewCellSmall.xib; sourceTree = "<group>"; };
+		E5CB39E11A295CAF00DD0D7A /* CQATimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CQATimeUtils.h; path = Utils/CQATimeUtils.h; sourceTree = "<group>"; };
+		E5CB39E21A295CAF00DD0D7A /* CQATimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CQATimeUtils.m; path = Utils/CQATimeUtils.m; sourceTree = "<group>"; };
+		E5CB39E41A29667500DD0D7A /* ic_TabNavBlueArrowNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_TabNavBlueArrowNav.png; sourceTree = "<group>"; };
+		E5CB39E51A29667500DD0D7A /* ic_TabNavBlueArrowNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_TabNavBlueArrowNav@2x.png"; sourceTree = "<group>"; };
+		E5CB39E81A29675100DD0D7A /* CQANavigationBarUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CQANavigationBarUtils.h; path = Utils/CQANavigationBarUtils.h; sourceTree = "<group>"; };
+		E5CB39E91A29675100DD0D7A /* CQANavigationBarUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CQANavigationBarUtils.m; path = Utils/CQANavigationBarUtils.m; sourceTree = "<group>"; };
 		E5E8D1271A278486009386DE /* CQABaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQABaseApi.h; sourceTree = "<group>"; };
 		E5E8D1281A278486009386DE /* CQABaseApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQABaseApi.m; sourceTree = "<group>"; };
 		E5E8D1291A278486009386DE /* CEMElMundoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEMElMundoApi.h; sourceTree = "<group>"; };
@@ -191,6 +213,7 @@
 		E50679541A235D6700F39808 /* elmundo */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39D41A294C1A00DD0D7A /* Models */,
 				E5CB39A11A28EF9C00DD0D7A /* Utils */,
 				E5CB399E1A28EE8600DD0D7A /* CQAAppSettingsDefinitions.h */,
 				E5CB399F1A28EE8600DD0D7A /* CQAAppSettingsDefinitions.m */,
@@ -250,6 +273,12 @@
 				E50FD7741A24B20C0026EC43 /* CEMNewsCollectionViewController.h */,
 				E50FD7751A24B20C0026EC43 /* CEMNewsCollectionViewController.m */,
 				E50FD7761A24B20C0026EC43 /* CEMNewsCollectionViewController.xib */,
+				E5CB39D51A294C5F00DD0D7A /* CEMArticleTableViewCell.h */,
+				E5CB39D61A294C5F00DD0D7A /* CEMArticleTableViewCell.m */,
+				E5CB39D71A294C5F00DD0D7A /* CEMArticleTableViewCell.xib */,
+				E5CB39DC1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.h */,
+				E5CB39DD1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.m */,
+				E5CB39DE1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +306,7 @@
 		E50679951A236A8400F39808 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39DA1A294CA600DD0D7A /* imageBackground.png */,
 				E5CB39A71A29022500DD0D7A /* boxTitle-small */,
 			);
 			path = Backgrounds;
@@ -285,6 +315,8 @@
 		E50679961A236A8400F39808 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39E41A29667500DD0D7A /* ic_TabNavBlueArrowNav.png */,
+				E5CB39E51A29667500DD0D7A /* ic_TabNavBlueArrowNav@2x.png */,
 				E5CB39B31A29064800DD0D7A /* ic_Settings.png */,
 				E5CB39B41A29064800DD0D7A /* ic_Settings@2x.png */,
 				E5CB39A91A2904AE00DD0D7A /* addButton.png */,
@@ -343,6 +375,10 @@
 		E5CB39A11A28EF9C00DD0D7A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB39E81A29675100DD0D7A /* CQANavigationBarUtils.h */,
+				E5CB39E91A29675100DD0D7A /* CQANavigationBarUtils.m */,
+				E5CB39E11A295CAF00DD0D7A /* CQATimeUtils.h */,
+				E5CB39E21A295CAF00DD0D7A /* CQATimeUtils.m */,
 				E5CB39D11A2933A300DD0D7A /* CEMSettings.h */,
 				E5CB39D21A2933A300DD0D7A /* CEMSettings.m */,
 				E5CB39A21A28EFC200DD0D7A /* CQAAppSettings.h */,
@@ -366,6 +402,13 @@
 				E5CB39BC1A29263100DD0D7A /* ImageIO.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5CB39D41A294C1A00DD0D7A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		E5E8D1261A278470009386DE /* Api */ = {
@@ -463,18 +506,22 @@
 				E506798D1A2363B600F39808 /* CEMNewsViewController.xib in Resources */,
 				E5CB39A81A29022500DD0D7A /* boxTitle-small in Resources */,
 				E506799F1A236A8400F39808 /* logoLaunch@2x in Resources */,
+				E5CB39E71A29667500DD0D7A /* ic_TabNavBlueArrowNav@2x.png in Resources */,
 				E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */,
 				E506799E1A236A8400F39808 /* logoLaunch in Resources */,
 				E50679A01A236A8400F39808 /* logoLaunch@3x.png in Resources */,
 				E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */,
+				E5CB39E01A294E9800DD0D7A /* CEMArticleTableViewCellSmall.xib in Resources */,
 				E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */,
 				E5CB399B1A28E2B200DD0D7A /* El_Mundoapp_palette.jpg in Resources */,
 				E5CB39B91A291BE500DD0D7A /* Localizable.strings in Resources */,
 				E5CB39B11A2904AE00DD0D7A /* ic_UserProfileSettings.png in Resources */,
 				E5CB399D1A28E75600DD0D7A /* MuseoSans_300.otf in Resources */,
 				E5CB39B01A2904AE00DD0D7A /* ic_TabNavMainSearch@2x.png in Resources */,
+				E5CB39DB1A294CA600DD0D7A /* imageBackground.png in Resources */,
 				E50679A11A236A8400F39808 /* logoNav in Resources */,
 				E5CB39B21A2904AE00DD0D7A /* ic_UserProfileSettings@2x.png in Resources */,
+				E5CB39E61A29667500DD0D7A /* ic_TabNavBlueArrowNav.png in Resources */,
 				E50679661A235D6700F39808 /* Images.xcassets in Resources */,
 				E5CB39B61A29064800DD0D7A /* ic_Settings@2x.png in Resources */,
 				E5CB39AF1A2904AE00DD0D7A /* ic_TabNavMainSearch.png in Resources */,
@@ -484,6 +531,7 @@
 				E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */,
 				E50679921A23674D00F39808 /* CEMLaunchViewController.xib in Resources */,
 				E50FD7781A24B20C0026EC43 /* CEMNewsCollectionViewController.xib in Resources */,
+				E5CB39D91A294C5F00DD0D7A /* CEMArticleTableViewCell.xib in Resources */,
 				E5CB39B51A29064800DD0D7A /* ic_Settings.png in Resources */,
 				E5CB39AE1A2904AE00DD0D7A /* addButton.png in Resources */,
 			);
@@ -509,13 +557,17 @@
 				E50FD7771A24B20C0026EC43 /* CEMNewsCollectionViewController.m in Sources */,
 				E5CB39A41A28EFC200DD0D7A /* CQAAppSettings.m in Sources */,
 				E5E8D12B1A278486009386DE /* CQABaseApi.m in Sources */,
+				E5CB39E31A295CAF00DD0D7A /* CQATimeUtils.m in Sources */,
 				E50679581A235D6700F39808 /* main.m in Sources */,
 				E5E8D12C1A278486009386DE /* CEMElMundoApi.m in Sources */,
+				E5CB39EA1A29675100DD0D7A /* CQANavigationBarUtils.m in Sources */,
 				E5CB39D31A2933A300DD0D7A /* CEMSettings.m in Sources */,
 				E506795E1A235D6700F39808 /* elmundo.xcdatamodeld in Sources */,
 				E50679A71A239E3D00F39808 /* CEMArticle.m in Sources */,
 				E5CB39A01A28EE8600DD0D7A /* CQAAppSettingsDefinitions.m in Sources */,
 				E506798C1A2363B600F39808 /* CEMNewsViewController.m in Sources */,
+				E5CB39D81A294C5F00DD0D7A /* CEMArticleTableViewCell.m in Sources */,
+				E5CB39DF1A294E9800DD0D7A /* CEMArticleTableViewCellSmall.m in Sources */,
 				E5E8D12F1A27861E009386DE /* CEMDefinitions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

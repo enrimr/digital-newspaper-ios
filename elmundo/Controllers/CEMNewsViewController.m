@@ -7,6 +7,11 @@
 //
 
 #import "CEMNewsViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "CEMArticleTableViewCell.h"
+#import "CEMArticleTableViewCellSmall.h"
+#import "CQATimeUtils.h"
+#import "CQANavigationBarUtils.h"
 
 @interface CEMNewsViewController ()
 
@@ -23,11 +28,6 @@
         _tableElements = arrayOfNews;
         _backButton = showBackButton;
         self.title = aTitle;
-        UITabBarItem* item = [[UITabBarItem alloc] initWithTitle:nil
-                                                           image:[UIImage imageNamed:@"ic_TabBarHome"]
-                                                   selectedImage:[UIImage imageNamed:@"ic_TabBarHome"]];
-        self.tabBarItem = item;
-        self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     }
     
     return self;
@@ -43,6 +43,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    //ic_TabNavBlueArrowNav
+    self.navigationItem.leftBarButtonItem =
+    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_TabNavBlueArrowNav"]
+                                     style:UIBarButtonItemStylePlain
+                                    target:self
+                                    action:@selector(backButtonClick)];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -52,7 +63,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -63,15 +74,105 @@
     return 0;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    NSDictionary *item = [_tableElements objectAtIndex:indexPath.item];
+    
+    
+    
+    if (indexPath.row == 0){
+        NSString *cellId = @"articleMain";
+        
+        // Declaramos el tipo de celda CQACuaqTableViewCell para que la tabla lo entienda y lo conozca
+        [tableView registerNib:[UINib nibWithNibName:@"CEMArticleTableViewCell" bundle:nil] forCellReuseIdentifier:cellId];
+        
+        // Reutilizaremos una celda del mismo identificador cellId
+        CEMArticleTableViewCell *cell = (CEMArticleTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+        
+        if (!cell) {
+            // En caso de que no se pudiera reutilizar, creamos una nueva
+            cell = [[CEMArticleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
+                                                 reuseIdentifier:cellId];
+        }
+        
+        NSString *imageUrlString = nil;
+        NSArray *arrayOfImages = (NSArray *)[item objectForKey:@"images"];
+        int imagesCount = 0;
+        if (arrayOfImages == nil || [arrayOfImages count] == 0){
+            arrayOfImages = nil;
+            [cell.articleImage setImage:[UIImage imageNamed:@"imageBackground"]];
+        } else {
+            imagesCount = (int)[arrayOfImages count];
+            imageUrlString = [arrayOfImages objectAtIndex:0];
+            [cell.articleImage sd_setImageWithURL:[NSURL URLWithString:imageUrlString]
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                            NSLog(@"Cargada");
+                                        }];
+        }
+
+        
+        [cell.articleTitle setText:[item objectForKey:@"title"]];
+        
+        // Calculamos el timestamp
+        NSTimeInterval dateToday = [[NSDate date] timeIntervalSince1970];
+        NSString *time = [NSString stringWithFormat:@"%@",[item objectForKey:@"publicationDate"]];
+        NSString *time10 = [time substringToIndex:10];
+        int timeInt = [time10 intValue];
+        int difference = dateToday - timeInt;
+        [cell.articleDate setText:[CQATimeUtils getTimeString:difference]];
+        
+        return cell;
+    } else {
+        NSString *cellId = @"articleSmall";
+        
+        // Declaramos el tipo de celda CQACuaqTableViewCell para que la tabla lo entienda y lo conozca
+        [tableView registerNib:[UINib nibWithNibName:@"CEMArticleTableViewCellSmall" bundle:nil] forCellReuseIdentifier:cellId];
+        
+        // Reutilizaremos una celda del mismo identificador cellId
+        CEMArticleTableViewCellSmall *cell = (CEMArticleTableViewCellSmall *)[tableView dequeueReusableCellWithIdentifier:cellId];
+        
+        if (!cell) {
+            // En caso de que no se pudiera reutilizar, creamos una nueva
+            cell = [[CEMArticleTableViewCellSmall alloc]initWithStyle:UITableViewCellStyleDefault
+                                                 reuseIdentifier:cellId];
+        }
+        
+        NSString *imageUrlString = nil;
+        NSArray *arrayOfImages = (NSArray *)[item objectForKey:@"images"];
+        int imagesCount = 0;
+        if (arrayOfImages == nil || [arrayOfImages count] == 0){
+            arrayOfImages = nil;
+            [cell.articleImage setImage:[UIImage imageNamed:@"imageBackground"]];
+        } else {
+            imagesCount = (int)[arrayOfImages count];
+            imageUrlString = [arrayOfImages objectAtIndex:0];
+            [cell.articleImage sd_setImageWithURL:[NSURL URLWithString:imageUrlString]
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                            NSLog(@"Cargada");
+                                        }];
+        }
+        
+        
+        
+        [cell.articleTitle setText:[item objectForKey:@"title"]];
+        
+        // Calculamos el timestamp
+        NSTimeInterval dateToday = [[NSDate date] timeIntervalSince1970];
+        NSString *time = [NSString stringWithFormat:@"%@",[item objectForKey:@"publicationDate"]];
+        NSString *time10 = [time substringToIndex:10];
+        int timeInt = [time10 intValue];
+        int difference = dateToday - timeInt;
+        [cell.articleDate setText:[CQATimeUtils getTimeString:difference]];
+        
+        return cell;
+    }
     
     // Configure the cell...
     
-    return cell;
+    return nil;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -132,5 +233,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.section == 0 && indexPath.row == 0) {
+        return 220.0;
+    }
+    // "Else"
+    return 114;
+}
+
+- (void) backButtonClick {
+    NSLog(@"backButtonClick local");
+    [[CQANavigationBarUtils alloc] backButtonClick:self.navigationController];
+}
 
 @end

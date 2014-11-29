@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CEMNewsCollectionViewController : UICollectionViewController
+@interface CEMNewsCollectionViewController : UICollectionViewController<UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSArray *tableElements;
 @property (nonatomic) BOOL backButton;

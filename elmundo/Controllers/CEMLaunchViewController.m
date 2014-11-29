@@ -25,7 +25,16 @@
     } else {
         [self goToChannels:[CEMSettings getChannels]];
     }
-
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:
+                                                                        [UIColor colorWithRed:117/255.0f
+                                                                                        green:125/255.0f
+                                                                                         blue:144/255.0f
+                                                                                        alpha:1.0f]};
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:122/255.0f
+                                                                        green:213/255.0f
+                                                                         blue:180/255.0f
+                                                                        alpha:1.0f];
 }
 
 - (void) viewWillAppear:(BOOL)animated
