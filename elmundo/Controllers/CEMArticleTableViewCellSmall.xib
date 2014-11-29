@@ -42,6 +42,10 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="1cA-nV-QAs">
+                                        <rect key="frame" x="14" y="15" width="20" height="20"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -55,6 +59,7 @@
                 <outlet property="articleDate" destination="jLZ-0y-dcs" id="ZuV-nA-ySV"/>
                 <outlet property="articleImage" destination="Kwb-3Z-9sf" id="RZq-2f-b7n"/>
                 <outlet property="articleTitle" destination="7P2-BU-46B" id="VxT-f8-0Oe"/>
+                <outlet property="spinner" destination="1cA-nV-QAs" id="TKS-C7-BAP"/>
             </connections>
             <point key="canvasLocation" x="345" y="239"/>
         </tableViewCell>

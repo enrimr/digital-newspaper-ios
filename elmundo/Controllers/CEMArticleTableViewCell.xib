@@ -39,6 +39,10 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="E2R-lH-Fjt">
+                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </activityIndicatorView>
                 </subviews>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="320" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -46,6 +50,7 @@
                 <outlet property="articleDate" destination="E3J-rX-G6x" id="gfx-mV-niN"/>
                 <outlet property="articleImage" destination="Aa5-UZ-RC6" id="b1b-fv-Y0e"/>
                 <outlet property="articleTitle" destination="dfS-Y5-eae" id="xNH-j2-eck"/>
+                <outlet property="spinner" destination="E2R-lH-Fjt" id="rKJ-V9-x2O"/>
             </connections>
             <point key="canvasLocation" x="345" y="231"/>
         </tableViewCell>

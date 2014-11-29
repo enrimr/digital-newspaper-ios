@@ -14,6 +14,7 @@
     NSString *selectedChannelName;
     BOOL isLoadingChannel;
     NSMutableArray *moreChannels;
+    UIActivityIndicatorView *spinnerActual;
 }
 
 @end
@@ -178,6 +179,11 @@ static NSString * const reuseIdentifier = @"Cell";
         UIImageView *backgroundTitle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"boxTitle-small"]];
         [backgroundTitle setFrame:CGRectMake(0, cell.frame.size.height - 50, cell.frame.size.width, 50)];
         
+        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        [spinner setFrame:CGRectMake(10, 10, 20, 20)];
+        [spinner setHidden:YES];
+        
+        [cell addSubview:spinner];
         [cell addSubview:backgroundTitle];
         [cell addSubview:label];
         
@@ -245,7 +251,7 @@ static NSString * const reuseIdentifier = @"Cell";
     return CGSizeMake(92, 92);
 }
 
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
     /*CEMNewsViewController *newsVC = [[CEMNewsViewController alloc] initWithTitle:NSLocalizedString(selectedChannelName, nil)
                                                                             news:nil
@@ -253,12 +259,20 @@ static NSString * const reuseIdentifier = @"Cell";
                                                                            style:UITableViewStylePlain];
     
     [self.navigationController pushViewController:newsVC animated:YES];*/
-    NSLog([NSString stringWithFormat:@"%d", indexPath.row]);
-    if (indexPath.row == [_tableElements count]-1){
+    NSLog([NSString stringWithFormat:@"%d", indexPath.item]);
+    if (indexPath.item == [_tableElements count]-1){
         NSLog(@"Agregar categoria");
         [self selectChannels:self];
     } else {
         if (!isLoadingChannel){
+            for (UIView *subview in [[collectionView cellForItemAtIndexPath:indexPath] subviews])
+            {
+                if([subview isKindOfClass:[UIActivityIndicatorView class]]){
+                    spinnerActual = subview;
+                    [spinnerActual setHidden:NO];
+                    [spinnerActual startAnimating];
+                }
+            }
             isLoadingChannel = YES;
             //NSLog([NSString stringWithFormat:@"%d", indexPath.row]);
             selectedChannelName = [[_tableElements objectAtIndex:indexPath.row] objectForKey:@"channel"];
@@ -274,6 +288,8 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)newsByChannelDidEnd:(id)result{
     NSLog(@"newsByChannelDidEnd");
     isLoadingChannel = NO;
+    [spinnerActual setHidden:YES];
+    [spinnerActual stopAnimating];
     CEMNewsViewController *newsVC = [[CEMNewsViewController alloc] initWithTitle:NSLocalizedString(selectedChannelName, nil)
                                                                             news:result
                                                                       backButton:YES
@@ -285,6 +301,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)newsByChannelFailure:(id)result{
     NSLog(@"newsByChannelFailure");
     isLoadingChannel = NO;
+    [spinnerActual setHidden:YES];
+    [spinnerActual stopAnimating];
 }
 
 -(void)checkIfIsUserChannel{

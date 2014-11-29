@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
 @property (weak, nonatomic) IBOutlet UILabel *articleTitle;
 @property (weak, nonatomic) IBOutlet UILabel *articleDate;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
