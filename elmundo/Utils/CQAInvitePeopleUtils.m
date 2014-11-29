@@ -11,11 +11,17 @@
 
 @implementation CQAInvitePeopleUtils
 
--(void)sendMessageByWhatsapp:(NSString *)message{
+-(void)sendMessageByWhatsapp:(NSString *)message article:(NSString *)articleId{
     NSLog(@"sendByWhatsapp:");
     
     NSURL *whatsappURL = [NSURL URLWithString:[NSString stringWithFormat:@"whatsapp://send?text=%@", [message stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
+        [[CEMElMundoApi alloc] shareArticle:articleId
+                                     userId:@"userId"
+                                   calledBy:self
+                                withSuccess:@selector(shareDidEnd:)
+                                 andFailure:@selector(shareFailure:)];
+        
         [[UIApplication sharedApplication] openURL: whatsappURL];
     }
 }
@@ -24,6 +30,7 @@
        withURL:(NSURL *)url
       andImage:(UIImage *)image
      byService:(NSString *)service
+            article:articleId
           from:(id)origin{
     if ([SLComposeViewController isAvailableForServiceType:service])
     {
@@ -43,6 +50,11 @@
                     break;
                 case SLComposeViewControllerResultDone:
                     //NSLog(@"Posted");
+                    [[CEMElMundoApi alloc] shareArticle:articleId
+                                                 userId:@"userId"
+                                               calledBy:self
+                                            withSuccess:@selector(shareDidEnd:)
+                                             andFailure:@selector(shareFailure:)];
                 default:
                     break;
             }
@@ -50,22 +62,34 @@
     }
 }
 
--(void)inviteByWhatsapp:(NSString *)anUrl{
-    [self sendMessageByWhatsapp:[NSString stringWithFormat:NSLocalizedString(INVITATION_MESSAGE,nil),anUrl]];
+-(void)inviteByWhatsapp:(NSString *)anUrl article:(NSString *)articleId{
+    [self sendMessageByWhatsapp:[NSString stringWithFormat:NSLocalizedString(INVITATION_MESSAGE,nil),anUrl]
+                        article:articleId];
 }
 
--(void)inviteByTwitterFrom:(id)origin url:(NSString *)anUrl{
+-(void)inviteByTwitterFrom:(id)origin url:(NSString *)anUrl article:(NSString *)articleId{
     [self shareMessage:[NSString stringWithFormat:NSLocalizedString(INVITATION_MESSAGE,nil),anUrl]
                withURL:[NSURL URLWithString:anUrl]
               andImage:[UIImage imageNamed:INVITATION_MESSAGE_IMAGE]
-             byService:SLServiceTypeTwitter from:origin];
+             byService:SLServiceTypeTwitter
+               article:articleId
+                  from:origin];
 }
 
--(void)inviteByFacebookFrom:(id)origin url:(NSString *)anUrl{
+-(void)inviteByFacebookFrom:(id)origin url:(NSString *)anUrl article:(NSString *)articleId{
     [self shareMessage:[NSString stringWithFormat:NSLocalizedString(INVITATION_MESSAGE,nil),anUrl]
                withURL:[NSURL URLWithString:anUrl]
               andImage:[UIImage imageNamed:INVITATION_MESSAGE_IMAGE]
-             byService:SLServiceTypeFacebook from:origin];
+             byService:SLServiceTypeFacebook
+               article:articleId
+                  from:origin];
 }
 
+-(void)shareDidEnd:(id)result{
+    NSLog(@"shareDidEnd");
+}
+
+-(void)shareFailure:(id)result{
+    NSLog(@"shareFailure");
+}
 @end

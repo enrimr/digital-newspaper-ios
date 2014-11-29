@@ -12,7 +12,9 @@
 #import "CQAInvitePeopleUtils.h"
 
 @interface CEMArticleViewController ()
-
+{
+    NSString *lastActionSheet;
+}
 @end
 
 @implementation CEMArticleViewController
@@ -99,7 +101,7 @@
     UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_10_news_comment"]
                                                                style:UIBarButtonItemStylePlain
                                                               target:self
-                                                              action:nil];
+                                                              action:@selector(commentArticle)];
     [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -75)];
     
     UIBarButtonItem *profile = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_07_share"]
@@ -133,6 +135,7 @@
 */
 
 - (IBAction)voteArticle:(id)sender {
+    [self voteArticleAction];
 }
 
 - (void) backButtonClick {
@@ -141,6 +144,7 @@
 }
 
 -(void)invitePeople{
+    lastActionSheet = @"invite";
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Share with friends", nil)
                                                              delegate:self
@@ -154,17 +158,110 @@
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    CQAInvitePeopleUtils *inviteUtils = [[CQAInvitePeopleUtils alloc] init];
-    switch (buttonIndex) {
-        case 0:
-            [inviteUtils inviteByWhatsapp:[_model objectForKey:@"guid"]];
-            break;
-        case 1:
-            [inviteUtils inviteByTwitterFrom:self url:[_model objectForKey:@"guid"]];
-            break;
-        case 2:
-            [inviteUtils inviteByFacebookFrom:self url:[_model objectForKey:@"guid"]];
-            break;
+    if ([lastActionSheet isEqualToString:@"invite"]){
+        CQAInvitePeopleUtils *inviteUtils = [[CQAInvitePeopleUtils alloc] init];
+        switch (buttonIndex) {
+            case 0:
+                [inviteUtils inviteByWhatsapp:[_model objectForKey:@"guid"]
+                                      article:[_model objectForKey:@"articleId"]];
+                break;
+            case 1:
+                [inviteUtils inviteByTwitterFrom:self
+                                             url:[_model objectForKey:@"guid"]
+                                         article:[_model objectForKey:@"articleId"]];
+                break;
+            case 2:
+                [inviteUtils inviteByFacebookFrom:self
+                                              url:[_model objectForKey:@"guid"]
+                                          article:[_model objectForKey:@"articleId"]];
+                break;
+        }
+    } else if ([lastActionSheet isEqualToString:@"vote"]){
+        switch (buttonIndex) {
+            case 0:
+                [[CEMElMundoApi alloc] voteArticle:[_model objectForKey:@"articleId"]
+                                            userId:@"userId"
+                                         voteValue:4
+                                          calledBy:self
+                                       withSuccess:@selector(voteArticleDidEnd:)
+                                        andFailure:@selector(voteArticleFailure:)];
+                break;
+            case 1:
+                [[CEMElMundoApi alloc] voteArticle:[_model objectForKey:@"articleId"]
+                                            userId:@"enrique"
+                                         voteValue:2
+                                          calledBy:self
+                                       withSuccess:@selector(voteArticleDidEnd:)
+                                        andFailure:@selector(voteArticleFailure:)];
+                break;
+            case 2:
+                [[CEMElMundoApi alloc] voteArticle:[_model objectForKey:@"articleId"]
+                                            userId:@"enrique"
+                                         voteValue:0
+                                          calledBy:self
+                                       withSuccess:@selector(voteArticleDidEnd:)
+                                        andFailure:@selector(voteArticleFailure:)];
+                break;
+            case 3:
+                [[CEMElMundoApi alloc] voteArticle:[_model objectForKey:@"articleId"]
+                                            userId:@"enrique"
+                                         voteValue:-1
+                                          calledBy:self
+                                       withSuccess:@selector(voteArticleDidEnd:)
+                                        andFailure:@selector(voteArticleFailure:)];
+                break;
+            case 4:
+                [[CEMElMundoApi alloc] voteArticle:[_model objectForKey:@"articleId"]
+                                            userId:@"enrique"
+                                         voteValue:-3
+                                          calledBy:self
+                                       withSuccess:@selector(voteArticleDidEnd:)
+                                        andFailure:@selector(voteArticleFailure:)];
+                break;
+        }
+    } else if ([lastActionSheet isEqualToString:@"comment"]){
+        
     }
+}
+
+-(void)voteArticleDidEnd:(id)result{
+    NSLog(@"voteArticleDidEnd");
+}
+
+-(void)voteArticleFailure:(id)result{
+    NSLog(@"voteArticleFailure");
+}
+
+-(void)voteArticleAction{
+    lastActionSheet = @"vote";
+    UIActionSheet * action = [[UIActionSheet alloc]
+                              initWithTitle:@"Puntúa la noticia"
+                              delegate:self
+                              cancelButtonTitle:@"Cancel"
+                              destructiveButtonTitle:nil
+                              otherButtonTitles:@"Sorprendido", @"Satisfecho", @"Indiferente", @"Enfadado", @"Triste", nil];
+    
+    /*[[[action valueForKey:@"_buttons"] objectAtIndex:0] setImage:[UIImage imageNamed:@"ic_11_moods_astonished"] forState:UIControlStateNormal];
+    [[[action valueForKey:@"_buttons"] objectAtIndex:1] setImage:[UIImage imageNamed:@"ic_11_moods_pleased"] forState:UIControlStateNormal];
+    [[[action valueForKey:@"_buttons"] objectAtIndex:2] setImage:[UIImage imageNamed:@"ic_11_moods_indiferent"] forState:UIControlStateNormal];
+    [[[action valueForKey:@"_buttons"] objectAtIndex:3] setImage:[UIImage imageNamed:@"ic_11_moods_worried"] forState:UIControlStateNormal];
+    [[[action valueForKey:@"_buttons"] objectAtIndex:4] setImage:[UIImage imageNamed:@"ic_11_moods_sorry"] forState:UIControlStateNormal];*/
+    action.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [action showFromBarButtonItem:self.parentViewController.navigationItem.leftBarButtonItem animated:YES];
+
+}
+
+-(void)commentArticle{
+    lastActionSheet = @"comment";
+    UIActionSheet * action = [[UIActionSheet alloc]
+                              initWithTitle:@"Comenta la noticia"
+                              delegate:self
+                              cancelButtonTitle:@"Cancelar"
+                              destructiveButtonTitle:nil
+                              otherButtonTitles:@"Con texto", @"Con voz", @"Con video", nil];
+    
+    action.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [action showFromBarButtonItem:self.parentViewController.navigationItem.leftBarButtonItem animated:YES];
+    
 }
 @end

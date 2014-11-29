@@ -253,6 +253,99 @@
                      }];
 }
 
+/** PUT: /api/1/voteArticle/{userId}/{articleId}/{voteValue} */
+- (void) voteArticle:(NSString *)articleId
+              userId:(NSString *)userId
+           voteValue:(int)voteValue
+            calledBy:(id)calledBy
+         withSuccess:(SEL)successCallback
+{
+    [self voteArticle:articleId
+               userId:userId
+            voteValue:voteValue
+             calledBy:self
+          withSuccess:successCallback
+           andFailure:@selector(defaultFailureCallback:)];
+}
+
+- (void) voteArticle:(NSString *)articleId
+              userId:(NSString *)userId
+           voteValue:(int)voteValue
+            calledBy:(id)calledBy
+         withSuccess:(SEL)successCallback
+          andFailure:(SEL)failureCallback
+{
+    NSLog([NSString stringWithFormat:@"%@/api/1/voteArticle/%@/%@/%d",
+           URL_API,
+           userId,
+           articleId,
+           voteValue]);
+    [self placePutRequestWithURL:[NSString stringWithFormat:@"%@/api/1/voteArticle/%@/%@/%d",
+                           URL_API,
+                           userId,
+                           articleId,
+                           voteValue]
+                 withData:[NSDictionary dictionaryWithObjectsAndKeys: nil]
+              withHandler:^(NSURLResponse *response, NSData *rawData, NSError *error) {
+                  NSString *string = [[NSString alloc] initWithData:rawData
+                                                           encoding:NSUTF8StringEncoding];
+                  
+                  NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+                  int code = [httpResponse statusCode];
+                  NSLog(@"%d", code);
+                  
+                  if (!(code >= 200 && code < 300) && !(code == 500)) {
+                      NSLog(@"ERROR (%d): %@", code, string);
+                      [calledBy performSelector:failureCallback withObject:string];
+                  } else {
+                      NSLog(@"OK");
+                      [calledBy performSelector:successCallback withObject:nil];
+                  }
+              }];
+}
+
+/** PUT: /api/1/shareArticle/{userId}/{articleId} */
+- (void) shareArticle:(NSString *)articleId
+              userId:(NSString *)userId
+            calledBy:(id)calledBy
+         withSuccess:(SEL)successCallback
+{
+    [self shareArticle:articleId
+                userId:userId
+              calledBy:self
+           withSuccess:successCallback
+            andFailure:@selector(defaultFailureCallback:)];
+}
+
+- (void) shareArticle:(NSString *)articleId
+              userId:(NSString *)userId
+            calledBy:(id)calledBy
+         withSuccess:(SEL)successCallback
+          andFailure:(SEL)failureCallback
+{
+    [self placePutRequestWithURL:[NSString stringWithFormat:@"%@/api/1/shareArticle/%@/%@",
+                                  URL_API,
+                                  userId,
+                                  articleId]
+                        withData:[NSDictionary dictionaryWithObjectsAndKeys: nil]
+                     withHandler:^(NSURLResponse *response, NSData *rawData, NSError *error) {
+                         NSString *string = [[NSString alloc] initWithData:rawData
+                                                                  encoding:NSUTF8StringEncoding];
+                         
+                         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+                         int code = [httpResponse statusCode];
+                         NSLog(@"%d", code);
+                         
+                         if (!(code >= 200 && code < 300) && !(code == 500)) {
+                             NSLog(@"ERROR (%d): %@", code, string);
+                             [calledBy performSelector:failureCallback withObject:string];
+                         } else {
+                             NSLog(@"OK");
+                             [calledBy performSelector:successCallback withObject:nil];
+                         }
+                     }];
+}
+
 #pragma mark Failure Callbacks
 
 - (void) defaultFailureCallback

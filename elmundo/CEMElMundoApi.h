@@ -77,6 +77,32 @@
        andFailure:(SEL)failureCallback;
 
 
+/** PUT: /api/1/voteArticle/{userId}/{articleId}/{voteValue} */
+- (void) voteArticle:(NSString *)articleId
+                userId:(NSString *)userId
+            voteValue:(int)voteValue
+              calledBy:(id)calledBy
+           withSuccess:(SEL)successCallback;
+
+- (void) voteArticle:(NSString *)articleId
+              userId:(NSString *)userId
+           voteValue:(int)voteValue
+              calledBy:(id)calledBy
+           withSuccess:(SEL)successCallback
+            andFailure:(SEL)failureCallback;
+
+/** PUT: /api/1/shareArticle/{userId}/{articleId} */
+- (void) shareArticle:(NSString *)articleId
+              userId:(NSString *)userId
+            calledBy:(id)calledBy
+         withSuccess:(SEL)successCallback;
+
+- (void) shareArticle:(NSString *)articleId
+              userId:(NSString *)userId
+            calledBy:(id)calledBy
+         withSuccess:(SEL)successCallback
+          andFailure:(SEL)failureCallback;
+
 #pragma mark -
 #pragma mark Failure Callbacks
 
