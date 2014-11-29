@@ -9,6 +9,7 @@
 #import "CEMAppDelegate.h"
 #import "CEMNewsViewController.h"
 #import "CEMLaunchViewController.h"
+#import "CQANotificationManager.h"
 
 @interface CEMAppDelegate ()
 
@@ -18,7 +19,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Notificaciones
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    else // iOS 7 or earlier
+    {
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    }
+
+    CQANotificationManager *nManager = [CQANotificationManager alloc];
+    [nManager scheduleLocalNotificationWithMessage:NSLocalizedString(@"Revisa las noticias de última hora en la nueva app de El Mundo", nil)
+                                                action:@"Leer noticias"
+                                              fireDate:[NSDate dateWithTimeIntervalSinceNow:30]
+                                              userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                        @"notDailyCuaq", @"type", nil]];
+    
+    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotification) {
+        application.applicationIconBadgeNumber = 0;
+    }
+    
     if ([CEMSettings isFirstTimeOpen]){
         [CEMSettings setMyChannels:@[@"espana",@"ciencia",@"economia",@"internacional",@"elmundo",@"cultura"]];
         [CEMSettings setFirstTimeOpen];

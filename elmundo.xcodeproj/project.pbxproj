@@ -30,6 +30,7 @@
 		E5B91D621A29DA6B00012E7F /* CQAAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D611A29DA6B00012E7F /* CQAAlerts.m */; };
 		E5B91D641A29E2DF00012E7F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D631A29E2DF00012E7F /* QuartzCore.framework */; };
 		E5B91D6A1A29E30A00012E7F /* GKLCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */; };
+		E5B91D6D1A29F36F00012E7F /* CQANotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D6B1A29F36F00012E7F /* CQANotificationManager.m */; };
 		E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */; };
 		E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */; };
 		E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */; };
@@ -180,6 +181,8 @@
 		E5B91D631A29E2DF00012E7F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E5B91D681A29E30A00012E7F /* GKLCubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKLCubeViewController.h; sourceTree = "<group>"; };
 		E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKLCubeViewController.m; sourceTree = "<group>"; };
+		E5B91D6B1A29F36F00012E7F /* CQANotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CQANotificationManager.m; path = Utils/CQANotificationManager.m; sourceTree = "<group>"; };
+		E5B91D6C1A29F36F00012E7F /* CQANotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CQANotificationManager.h; path = Utils/CQANotificationManager.h; sourceTree = "<group>"; };
 		E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
 		E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
 		E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
@@ -348,6 +351,7 @@
 		E50679541A235D6700F39808 /* elmundo */ = {
 			isa = PBXGroup;
 			children = (
+				E5B91D6E1A29F45900012E7F /* Voice */,
 				E5CB39D41A294C1A00DD0D7A /* Models */,
 				E5CB39A11A28EF9C00DD0D7A /* Utils */,
 				E5CB399E1A28EE8600DD0D7A /* CQAAppSettingsDefinitions.h */,
@@ -550,6 +554,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		E5B91D6E1A29F45900012E7F /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Voice;
+			sourceTree = "<group>";
+		};
 		E5CB39901A28E2B200DD0D7A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +583,8 @@
 		E5CB39A11A28EF9C00DD0D7A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E5B91D6B1A29F36F00012E7F /* CQANotificationManager.m */,
+				E5B91D6C1A29F36F00012E7F /* CQANotificationManager.h */,
 				E5B91D681A29E30A00012E7F /* GKLCubeViewController.h */,
 				E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */,
 				E5B91D601A29DA6B00012E7F /* CQAAlerts.h */,
@@ -828,6 +841,7 @@
 				E50679581A235D6700F39808 /* main.m in Sources */,
 				E5E8D12C1A278486009386DE /* CEMElMundoApi.m in Sources */,
 				E5CB39EA1A29675100DD0D7A /* CQANavigationBarUtils.m in Sources */,
+				E5B91D6D1A29F36F00012E7F /* CQANotificationManager.m in Sources */,
 				E5B91D621A29DA6B00012E7F /* CQAAlerts.m in Sources */,
 				E5CB39D31A2933A300DD0D7A /* CEMSettings.m in Sources */,
 				E506795E1A235D6700F39808 /* elmundo.xcdatamodeld in Sources */,
