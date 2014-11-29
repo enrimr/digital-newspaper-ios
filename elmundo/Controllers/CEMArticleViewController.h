@@ -20,8 +20,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *articleTitle;
 @property (weak, nonatomic) IBOutlet UITextView *articleText;
 @property (weak, nonatomic) IBOutlet UIButton *articleVoteButton;
+@property (weak, nonatomic) IBOutlet UIView *categoriesView;
+@property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 
 - (IBAction)voteArticle:(id)sender;
+- (IBAction)viewComments:(id)sender;
 
 - (id)initWithTitle:(NSString *)aTitle
             article:(NSDictionary *)anArticle

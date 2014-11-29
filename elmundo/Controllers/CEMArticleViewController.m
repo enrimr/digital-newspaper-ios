@@ -37,6 +37,7 @@
     [super viewDidLoad];
     
     [self.scroll setDelegate:self];
+    //[self.scroll setContentSize:CGSizeMake(320, 1000)];
 
     [self.articleTitle setText:[_model objectForKey:@"title"]];
     
@@ -57,15 +58,24 @@
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[[_model objectForKey:@"text"] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     
-    /*NSInteger stringLength=[[_model objectForKey:@"text"] length];
-    [attributedString addAttribute:NSFontAttributeName
-                            value:[UIFont fontWithName:@"MuseoSans-700" size:12.0]
-                            range:NSMakeRange(0, stringLength)];
+    NSInteger stringLength=[[_model objectForKey:@"text"] length];
+    
+    /*[attributedString addAttribute:NSFontAttributeName
+                            value:[UIFont fontWithName:@"MuseoSans-700" size:14.0]
+                            range:NSMakeRange(0, stringLength - 20)];
     [attributedString addAttribute:NSForegroundColorAttributeName
                             value:[UIColor darkGrayColor]
-                            range:NSMakeRange(0, stringLength)];*/
+                            range:NSMakeRange(0, stringLength - 20)];*/
     
     [self.articleText setAttributedText:attributedString];
+    
+    CGSize textViewSize = [[attributedString string] sizeWithFont:[UIFont fontWithName:@"MuseoSans-700" size:13]
+                           constrainedToSize:CGSizeMake(300, FLT_MAX)
+                               lineBreakMode:UILineBreakModeTailTruncation];
+    [self.articleText setFrame:CGRectMake(self.articleText.frame.origin.x,
+                                          self.articleText.frame.origin.y,
+                                          textViewSize.width,
+                                          textViewSize.height)];
     
     [self.articleCreator setText:[_model objectForKey:@"creator"]];
     
@@ -84,8 +94,49 @@
     
     [self.articleDate setText:formattedDate];
     
-
-
+    NSArray *categories = [_model objectForKey:@"categories"];
+    
+    int y = 0;
+    int i = 0;
+    int width = 10;
+    int height = 10;
+    for (NSString *category in categories) {
+        CGSize stringsize = [category sizeWithFont:[UIFont fontWithName:@"MuseoSans-500" size:11]];
+        if (stringsize.width <= 285) {
+            if(i > 10) {
+                break;
+            }
+            
+            width += stringsize.width + 15 + 10;
+            height += stringsize.height;
+            if (width > 285) {
+                y++;
+                width = 10;
+            } else {
+                width -= stringsize.width;
+            }
+            UIButton *buttonForCategory = [[UIButton alloc] initWithFrame:CGRectMake(width,
+                                                                                     10+(10+20)*y,
+                                                                                     15+stringsize.width,
+                                                                                     25)];
+            
+            [buttonForCategory setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+            [buttonForCategory setFont:[UIFont fontWithName:@"MuseoSans-500" size:11]];
+            [buttonForCategory setTitle:category forState:UIControlStateNormal];
+            [buttonForCategory setBackgroundColor:[UIColor colorWithRed:235/255.0f green:238/255.0f blue:192/255.0f alpha:1.0]];
+            [buttonForCategory addTarget:self action:@selector(searchKey:) forControlEvents:UIControlEventTouchUpInside];
+            [self.categoriesView addSubview:buttonForCategory];
+            i++;
+            width += stringsize.width+15+10;
+        }
+    }
+    [self.categoriesView setFrame:CGRectMake(self.categoriesView.frame.origin.x, 280+textViewSize.height-10, 300, height+10)];
+    [self.commentsButton setFrame:CGRectMake(self.commentsButton.frame.origin.x,
+                                            280+textViewSize.height+height+10,
+                                            self.commentsButton.frame.size.width,
+                                            self.commentsButton.frame.size.height)];
+    
+    [self.scroll setContentSize:CGSizeMake(320, 280+textViewSize.height+height+10+self.commentsButton.frame.size.height+10)];
     
 }
 
@@ -136,6 +187,9 @@
 
 - (IBAction)voteArticle:(id)sender {
     [self voteArticleAction];
+}
+
+- (IBAction)viewComments:(id)sender {
 }
 
 - (void) backButtonClick {
@@ -221,6 +275,15 @@
         }
     } else if ([lastActionSheet isEqualToString:@"comment"]){
         
+        lastActionSheet = @"commentText";
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Nuevo comentario", nil)
+                                                         message:nil
+                                                        delegate:self
+                                               cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                               otherButtonTitles:NSLocalizedString(@"Comentar", nil), nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alert show];
     }
 }
 
@@ -263,5 +326,32 @@
     action.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [action showFromBarButtonItem:self.parentViewController.navigationItem.leftBarButtonItem animated:YES];
     
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([lastActionSheet isEqualToString:@"commentText"]){
+        if (buttonIndex == 1)
+        {
+            
+        }
+    } else if ([lastActionSheet isEqualToString:@"commentAudio"]){
+        if (buttonIndex == 1)
+        {
+            
+        }
+    } else if ([lastActionSheet isEqualToString:@"commentVideo"]){
+        if (buttonIndex == 1)
+        {
+            
+        }
+    }
+}
+
+-(void)searchKey:(id)sender{
+    NSLog(@"searchKey");
+    UIButton *button = (UIButton *)sender;
+    NSString *key = [[button titleLabel] text];
+    NSLog(key);
 }
 @end
