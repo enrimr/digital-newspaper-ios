@@ -14,6 +14,7 @@
 @interface CEMArticleViewController ()
 {
     NSString *lastActionSheet;
+    NSString *searchKey;
 }
 @end
 
@@ -284,6 +285,34 @@
                                                otherButtonTitles:NSLocalizedString(@"Comentar", nil), nil];
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         [alert show];
+    } else if ([lastActionSheet isEqualToString:@"search"]){
+        switch (buttonIndex) {
+            case 0:
+                // El Mundo
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ariadna.elmundo.es/buscador/archivo.html?q=%@",[searchKey stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
+                break;
+            case 1:
+                // Marca
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://cgi.marca.com/buscador/archivo_marca.html?q=%@",[[searchKey stringByReplacingOccurrencesOfString:@" " withString:@"+"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
+                break;
+            case 2:
+                // Wikipedia
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://es.wikipedia.org/wiki/%@",[[searchKey stringByReplacingOccurrencesOfString:@" " withString:@"_"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
+                break;
+            case 3:
+                // YouTube
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.youtube.com/results?search_query=%@",[[searchKey stringByReplacingOccurrencesOfString:@" " withString:@"+"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
+                break;
+            case 4:
+                // Amazon
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.amazon.es/s/field-keywords=%@",[[searchKey stringByReplacingOccurrencesOfString:@" " withString:@"+"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
+                
+                break;
+            case 5:
+                // ASOS
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.asos.com/search/%@?q=%@",[[searchKey stringByReplacingOccurrencesOfString:@" " withString:@"-"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[[searchKey stringByReplacingOccurrencesOfString:@" " withString:@"+"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
+                break;
+        }
     }
 }
 
@@ -351,7 +380,17 @@
 -(void)searchKey:(id)sender{
     NSLog(@"searchKey");
     UIButton *button = (UIButton *)sender;
-    NSString *key = [[button titleLabel] text];
-    NSLog(key);
+    searchKey = [[button titleLabel] text];
+    NSLog(searchKey);
+    lastActionSheet = @"search";
+    UIActionSheet * action = [[UIActionSheet alloc]
+                              initWithTitle:[NSString stringWithFormat:@"Buscar '%@' en...",searchKey]
+                              delegate:self
+                              cancelButtonTitle:@"Cancelar"
+                              destructiveButtonTitle:nil
+                              otherButtonTitles:@"El Mundo", @"Marca", @"Wikipedia", @"YouTube", @"Amazon", @"ASOS", nil];
+    
+    action.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [action showFromBarButtonItem:self.parentViewController.navigationItem.leftBarButtonItem animated:YES];
 }
 @end
