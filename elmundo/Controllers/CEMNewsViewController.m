@@ -14,8 +14,8 @@
 #import "CQANavigationBarUtils.h"
 #import "CEMArticleViewController.h"
 
-@interface CEMNewsViewController ()
-
+@interface CEMNewsViewController (){
+}
 @end
 
 @implementation CEMNewsViewController
@@ -46,32 +46,35 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    [[CEMElMundoApi alloc] newsByChannel:@"social"
-                                  userId:@"userId"
-                                calledBy:self
-                             withSuccess:@selector(newsByChannelDidEnd:)
-                              andFailure:@selector(newsByChannelFailure:)];
-    
-    //ic_TabNavBlueArrowNav
-    self.parentViewController.navigationItem.leftBarButtonItem =
-    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_TabNavBlueArrowNav"]
-                                     style:UIBarButtonItemStylePlain
-                                    target:self
-                                    action:@selector(backButtonClick)];
-    
-    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_search"]
-                                                               style:UIBarButtonItemStylePlain
-                                                              target:self
-                                                              action:nil];
-    [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -40)];
-    
-    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_options"]
-                                                             style:UIBarButtonItemStylePlain
-                                                            target:self
-                                                            action:nil];
-    [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
-    
-    self.parentViewController.navigationItem.rightBarButtonItems = @[menu, search];
+        self.navigationItem.title = self.title;
+        
+        //ic_TabNavBlueArrowNav
+        self.navigationItem.leftBarButtonItem =
+        [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_TabNavBlueArrowNav"]
+                                         style:UIBarButtonItemStylePlain
+                                        target:self
+                                        action:@selector(backButtonClick)];
+        
+        UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_search"]
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:nil];
+        [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -40)];
+        
+        UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_options"]
+                                                                 style:UIBarButtonItemStylePlain
+                                                                target:self
+                                                                action:nil];
+        [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
+        
+        self.navigationItem.rightBarButtonItems = @[menu, search];
+    if ([self.title isEqualToString:@"Mi mundo"]){
+        [[CEMElMundoApi alloc] newsByChannel:@"social"
+                                      userId:@"userId"
+                                    calledBy:self
+                                 withSuccess:@selector(newsByChannelDidEnd:)
+                                  andFailure:@selector(newsByChannelFailure:)];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -291,6 +294,37 @@
 
 -(void)newsByChannelFailure:(id)result{
     NSLog(@"newsByChannelFailure");
+}
+
+-(void)cubeViewDidUnhide
+{
+
+    self.parentViewController.navigationItem.title = self.title;
+    [[CEMElMundoApi alloc] newsByChannel:@"social"
+                                  userId:@"userId"
+                                calledBy:self
+                             withSuccess:@selector(newsByChannelDidEnd:)
+                              andFailure:@selector(newsByChannelFailure:)];
+    
+    self.parentViewController.navigationItem.leftBarButtonItem =
+    [[UIBarButtonItem alloc] initWithImage:[[UIImage alloc] init]
+                                     style:UIBarButtonItemStylePlain
+                                    target:self
+                                    action:nil];
+    
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_search"]
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:nil];
+    [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -40)];
+    
+    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_options"]
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:nil];
+    [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
+    
+    self.parentViewController.navigationItem.rightBarButtonItems = @[menu, search];
 }
 
 @end

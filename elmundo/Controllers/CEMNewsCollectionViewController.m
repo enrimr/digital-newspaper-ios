@@ -276,6 +276,7 @@ static NSString * const reuseIdentifier = @"Cell";
             isLoadingChannel = YES;
             //NSLog([NSString stringWithFormat:@"%d", indexPath.row]);
             selectedChannelName = [[_tableElements objectAtIndex:indexPath.row] objectForKey:@"channel"];
+            
             [[CEMElMundoApi alloc] newsByChannel:selectedChannelName
                                   userId:@"userId"
                                 calledBy:self
@@ -366,5 +367,31 @@ static NSString * const reuseIdentifier = @"Cell";
     }
 }
 
+-(void)cubeViewDidUnhide
+{
+    self.parentViewController.navigationItem.title = nil;
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_logo"]];
+    self.parentViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:logo];
+    
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_search"]
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:nil];
+    [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -75)];
+    
+    UIBarButtonItem *profile = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_profile"]
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:nil];
+    [profile setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -35)];
+    
+    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_options"]
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:nil];
+    [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
+    
+    self.parentViewController.navigationItem.rightBarButtonItems = @[menu, profile, search];
+}
 
 @end
