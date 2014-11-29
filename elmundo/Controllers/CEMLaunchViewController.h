@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CEMLaunchViewController : UIViewController
+@interface CEMLaunchViewController : UIViewController<NSLayoutManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 

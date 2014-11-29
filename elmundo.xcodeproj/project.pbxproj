@@ -31,6 +31,8 @@
 		E5B91D641A29E2DF00012E7F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D631A29E2DF00012E7F /* QuartzCore.framework */; };
 		E5B91D6A1A29E30A00012E7F /* GKLCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */; };
 		E5B91D6D1A29F36F00012E7F /* CQANotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D6B1A29F36F00012E7F /* CQANotificationManager.m */; };
+		E5B91D701A29F70200012E7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D6F1A29F70200012E7F /* CoreLocation.framework */; };
+		E5B91D721A29FAA200012E7F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D711A29FAA200012E7F /* MobileCoreServices.framework */; };
 		E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */; };
 		E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */; };
 		E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */; };
@@ -183,6 +185,8 @@
 		E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKLCubeViewController.m; sourceTree = "<group>"; };
 		E5B91D6B1A29F36F00012E7F /* CQANotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CQANotificationManager.m; path = Utils/CQANotificationManager.m; sourceTree = "<group>"; };
 		E5B91D6C1A29F36F00012E7F /* CQANotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CQANotificationManager.h; path = Utils/CQANotificationManager.h; sourceTree = "<group>"; };
+		E5B91D6F1A29F70200012E7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E5B91D711A29FAA200012E7F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
 		E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
 		E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B91D721A29FAA200012E7F /* MobileCoreServices.framework in Frameworks */,
+				E5B91D701A29F70200012E7F /* CoreLocation.framework in Frameworks */,
 				E5B91D641A29E2DF00012E7F /* QuartzCore.framework in Frameworks */,
 				E5CB39CB1A29265C00DD0D7A /* Foundation.framework in Frameworks */,
 				E5CB39CD1A29266300DD0D7A /* UIKit.framework in Frameworks */,
@@ -606,6 +612,8 @@
 		E5CB39CE1A29268C00DD0D7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5B91D711A29FAA200012E7F /* MobileCoreServices.framework */,
+				E5B91D6F1A29F70200012E7F /* CoreLocation.framework */,
 				E5B91D631A29E2DF00012E7F /* QuartzCore.framework */,
 				E5CB39CF1A29269700DD0D7A /* SDWebImage.framework */,
 				E5CB39CC1A29266300DD0D7A /* UIKit.framework */,

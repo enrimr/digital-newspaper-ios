@@ -12,10 +12,16 @@
 #import "CEMNewsCollectionViewController.h"
 #import "GKLCubeViewController.h"
 #import "CEMNewsViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface CEMLaunchViewController ()
 {
     NSArray *socialArticlesArray;
+    // Location
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+    NSString *location;
 }
 
 @end
@@ -24,6 +30,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Posición
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
+    
     
     socialArticlesArray = [[NSArray alloc] init];
     
@@ -127,6 +143,49 @@
     [cubeViewController addCubeSideForChildController:socialCategoryVC];
     
     [[self navigationController] pushViewController:cubeViewController animated:YES];
+}
+
+#pragma mark Location manager
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    location = NSLocalizedString(@"No location", nil);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        NSLog([NSString stringWithFormat:@"Longitude: %.8f", currentLocation.coordinate.longitude]);
+        NSLog([NSString stringWithFormat:@"Latitude: %.8f", currentLocation.coordinate.latitude]);
+    }
+    
+    // Stop Location Manager
+    [locationManager stopUpdatingLocation];
+    
+    // Reverse Geocoding
+    NSLog(@"Resolving the Address");
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        //NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            
+            //            NSLog(@"%@",[NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@ - Locality: %@, Sublocality: %@",
+            //                   placemark.subThoroughfare, placemark.thoroughfare,
+            //                   placemark.postalCode, placemark.locality,
+            //                   placemark.administrativeArea,
+            //                   placemark.country,
+            //                   placemark.locality,
+            //                   placemark.subLocality]);
+            
+            location = [NSString stringWithFormat:@"%@ (%@)",placemark.locality, placemark.country];
+            location = [NSString stringWithString:location];
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
+    
 }
 
 @end
