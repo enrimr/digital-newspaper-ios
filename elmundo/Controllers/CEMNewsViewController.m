@@ -46,9 +46,14 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    [[CEMElMundoApi alloc] newsByChannel:@"social"
+                                  userId:@"userId"
+                                calledBy:self
+                             withSuccess:@selector(newsByChannelDidEnd:)
+                              andFailure:@selector(newsByChannelFailure:)];
     
     //ic_TabNavBlueArrowNav
-    self.navigationItem.leftBarButtonItem =
+    self.parentViewController.navigationItem.leftBarButtonItem =
     [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_TabNavBlueArrowNav"]
                                      style:UIBarButtonItemStylePlain
                                     target:self
@@ -66,7 +71,7 @@
                                                             action:nil];
     [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
     
-    self.navigationItem.rightBarButtonItems = @[menu, search];
+    self.parentViewController.navigationItem.rightBarButtonItems = @[menu, search];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -277,6 +282,15 @@
     while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
         s = [s stringByReplacingCharactersInRange:r withString:@""];
     return s;
+}
+
+- (void)newsByChannelDidEnd:(id)result{
+    _tableElements = (NSArray *)result;
+    [self.tableView reloadData];
+}
+
+-(void)newsByChannelFailure:(id)result{
+    NSLog(@"newsByChannelFailure");
 }
 
 @end

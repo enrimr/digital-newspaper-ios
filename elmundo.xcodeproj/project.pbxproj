@@ -28,6 +28,8 @@
 		E50FD7771A24B20C0026EC43 /* CEMNewsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E50FD7751A24B20C0026EC43 /* CEMNewsCollectionViewController.m */; };
 		E50FD7781A24B20C0026EC43 /* CEMNewsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E50FD7761A24B20C0026EC43 /* CEMNewsCollectionViewController.xib */; };
 		E5B91D621A29DA6B00012E7F /* CQAAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D611A29DA6B00012E7F /* CQAAlerts.m */; };
+		E5B91D641A29E2DF00012E7F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D631A29E2DF00012E7F /* QuartzCore.framework */; };
+		E5B91D6A1A29E30A00012E7F /* GKLCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */; };
 		E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */; };
 		E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */; };
 		E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */; };
@@ -175,6 +177,9 @@
 		E50FD7761A24B20C0026EC43 /* CEMNewsCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CEMNewsCollectionViewController.xib; path = Controllers/CEMNewsCollectionViewController.xib; sourceTree = "<group>"; };
 		E5B91D601A29DA6B00012E7F /* CQAAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CQAAlerts.h; path = Utils/CQAAlerts.h; sourceTree = "<group>"; };
 		E5B91D611A29DA6B00012E7F /* CQAAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CQAAlerts.m; path = Utils/CQAAlerts.m; sourceTree = "<group>"; };
+		E5B91D631A29E2DF00012E7F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E5B91D681A29E30A00012E7F /* GKLCubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKLCubeViewController.h; sourceTree = "<group>"; };
+		E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKLCubeViewController.m; sourceTree = "<group>"; };
 		E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
 		E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
 		E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
@@ -297,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B91D641A29E2DF00012E7F /* QuartzCore.framework in Frameworks */,
 				E5CB39CB1A29265C00DD0D7A /* Foundation.framework in Frameworks */,
 				E5CB39CD1A29266300DD0D7A /* UIKit.framework in Frameworks */,
 				E5CB39C91A29265000DD0D7A /* AVFoundation.framework in Frameworks */,
@@ -566,6 +572,8 @@
 		E5CB39A11A28EF9C00DD0D7A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E5B91D681A29E30A00012E7F /* GKLCubeViewController.h */,
+				E5B91D691A29E30A00012E7F /* GKLCubeViewController.m */,
 				E5B91D601A29DA6B00012E7F /* CQAAlerts.h */,
 				E5B91D611A29DA6B00012E7F /* CQAAlerts.m */,
 				E5CB3A661A2991F500DD0D7A /* CQAInvitePeopleUtils.h */,
@@ -585,6 +593,7 @@
 		E5CB39CE1A29268C00DD0D7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5B91D631A29E2DF00012E7F /* QuartzCore.framework */,
 				E5CB39CF1A29269700DD0D7A /* SDWebImage.framework */,
 				E5CB39CC1A29266300DD0D7A /* UIKit.framework */,
 				E5CB39CA1A29265C00DD0D7A /* Foundation.framework */,
@@ -808,6 +817,7 @@
 			files = (
 				E50679911A23674D00F39808 /* CEMLaunchViewController.m in Sources */,
 				E506795B1A235D6700F39808 /* CEMAppDelegate.m in Sources */,
+				E5B91D6A1A29E30A00012E7F /* GKLCubeViewController.m in Sources */,
 				E50FD7731A24A7F90026EC43 /* CEMAd.m in Sources */,
 				E50FD7771A24B20C0026EC43 /* CEMNewsCollectionViewController.m in Sources */,
 				E5CB39A41A28EFC200DD0D7A /* CQAAppSettings.m in Sources */,

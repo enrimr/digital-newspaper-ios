@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GKLCubeViewController.h"
 
-@interface CEMNewsCollectionViewController : UICollectionViewController<UIActionSheetDelegate>
+@interface CEMNewsCollectionViewController : UICollectionViewController<UIActionSheetDelegate, GKLCubeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *tableElements;
 @property (nonatomic) BOOL backButton;

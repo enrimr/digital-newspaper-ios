@@ -63,7 +63,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewWillAppear:YES];
     
     UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_logo"]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:logo];
+    self.parentViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:logo];
     
     UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_search"]
                                                                style:UIBarButtonItemStylePlain
@@ -83,7 +83,7 @@ static NSString * const reuseIdentifier = @"Cell";
                                                             action:nil];
     [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
     
-    self.navigationItem.rightBarButtonItems = @[menu, profile, search];
+    self.parentViewController.navigationItem.rightBarButtonItems = @[menu, profile, search];
     
 }
 
