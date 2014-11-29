@@ -62,22 +62,22 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoLaunch"]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_logo"]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:logo];
     
-    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_TabNavMainSearch"]
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_search"]
                                                                style:UIBarButtonItemStylePlain
                                                               target:self
                                                               action:nil];
     [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -75)];
     
-    UIBarButtonItem *profile = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_UserProfileSettings"]
+    UIBarButtonItem *profile = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_profile"]
                                                                 style:UIBarButtonItemStylePlain
                                                                target:self
                                                                action:nil];
     [profile setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -35)];
     
-    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_Settings"]
+    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_options"]
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:nil];
@@ -176,7 +176,7 @@ static NSString * const reuseIdentifier = @"Cell";
         [label setLineBreakMode:NSLineBreakByTruncatingTail];
   
         // Image
-        UIImageView *backgroundTitle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"boxTitle-small"]];
+        UIImageView *backgroundTitle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_03_topic_gradient"]];
         [backgroundTitle setFrame:CGRectMake(0, cell.frame.size.height - 50, cell.frame.size.width, 50)];
         
         UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -320,7 +320,7 @@ static NSString * const reuseIdentifier = @"Cell";
     if (![CEMSettings areAllChannelsLoaded]) {
         [tableElementsMutable addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                              @"", @"channel",
-                             @"addButton", @"image", nil]];
+                             @"ic_03_topic_add", @"image", nil]];
     }
     
     _tableElements = tableElementsMutable;

@@ -28,7 +28,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aa5-UZ-RC6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boxTitle-small" translatesAutoresizingMaskIntoConstraints="NO" id="FlL-Yu-Des">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_03_maintopic_gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="FlL-Yu-Des">
                         <rect key="frame" x="0.0" y="130" width="320" height="90"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-Y5-eae">
@@ -59,7 +59,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="El_Mundoapp_palette.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="B95-Tq-uXP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_08_cover_moods.png" translatesAutoresizingMaskIntoConstraints="NO" id="B95-Tq-uXP">
                         <rect key="frame" x="281" y="178" width="25" height="25"/>
                     </imageView>
                 </subviews>
@@ -77,8 +77,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="El_Mundoapp_palette.jpg" width="585" height="1024"/>
-        <image name="boxTitle-small" width="106" height="45"/>
+        <image name="ic_03_maintopic_gradient.png" width="216" height="104"/>
+        <image name="ic_08_cover_moods.png" width="32" height="32"/>
         <image name="imageBackground.png" width="360" height="640"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

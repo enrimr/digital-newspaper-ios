@@ -22,8 +22,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSplash.png" id="tbs-lQ-iBB">
-                    <rect key="frame" x="110" y="150" width="102" height="110"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_01_splashscreen.png" id="tbs-lQ-iBB">
+                    <rect key="frame" x="64" y="188" width="192" height="192"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -34,7 +34,7 @@
         </view>
     </objects>
     <resources>
-        <image name="logoSplash.png" width="204" height="220"/>
+        <image name="ic_01_splashscreen.png" width="192" height="192"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

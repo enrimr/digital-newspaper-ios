@@ -33,6 +33,10 @@ NSString *const BACK_BUTTON_HOVER = @"ic_TabNavBlueArrowNavHover.png";
 NSString *const ELMUNDO_CHANNELS = @"elmundoChannels";
 NSString *const ELMUNDO_MY_CHANNELS = @"elmundoMyChannels";
 
+// Messages
+NSString *const INVITATION_MESSAGE = @"Mira qué noticia más interesante %@";
+NSString *const INVITATION_MESSAGE_URL = @"http://cqa.es/elmundo";
+NSString *const INVITATION_MESSAGE_IMAGE = @"ic_01_splashscreen";
 
 @implementation CEMDefinitions
 

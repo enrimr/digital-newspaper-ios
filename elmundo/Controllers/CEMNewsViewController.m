@@ -12,6 +12,7 @@
 #import "CEMArticleTableViewCellSmall.h"
 #import "CQATimeUtils.h"
 #import "CQANavigationBarUtils.h"
+#import "CEMArticleViewController.h"
 
 @interface CEMNewsViewController ()
 
@@ -52,6 +53,20 @@
                                      style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(backButtonClick)];
+    
+    UIBarButtonItem *search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_search"]
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:nil];
+    [search setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, -40)];
+    
+    UIBarButtonItem *menu = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_02_actionbar_options"]
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:nil];
+    [menu setImageInsets:UIEdgeInsetsMake(0.0, -2.5, 0, 5)];
+    
+    self.navigationItem.rightBarButtonItems = @[menu, search];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -215,21 +230,24 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
+    NSDictionary *article = [_tableElements objectAtIndex:indexPath.item];
+    CEMArticleViewController *detailViewController = [[CEMArticleViewController alloc]
+                                                      initWithTitle:[article objectForKey:@"title"]
+                                                      article:article
+                                                      backButton:YES
+                                                      style:UITableViewStylePlain];
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
-*/
+
 
 /*
 #pragma mark - Navigation

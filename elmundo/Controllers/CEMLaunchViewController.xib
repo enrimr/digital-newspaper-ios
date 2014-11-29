@@ -15,20 +15,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_01_splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="EQd-7D-wzf">
+                    <rect key="frame" x="64" y="188" width="192" height="192"/>
+                </imageView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-SM-bDe">
-                    <rect key="frame" x="150" y="361" width="20" height="20"/>
+                    <rect key="frame" x="150" y="415" width="20" height="20"/>
                     <color key="color" red="0.76470588240000004" green="0.77647058820000003" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Sh-iY-yUX">
-                    <rect key="frame" x="110" y="150" width="102" height="110"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="340" y="335"/>
         </view>
     </objects>
     <resources>
-        <image name="logoSplash.png" width="204" height="220"/>
+        <image name="ic_01_splashscreen.png" width="192" height="192"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CEMArticleViewController : UIViewController
+@interface CEMArticleViewController : UIViewController<UIScrollViewDelegate>
+
+@property (strong, nonatomic) NSDictionary *model;
+@property (nonatomic) BOOL backButton;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
+@property (weak, nonatomic) IBOutlet UIImageView *articleImage;
+@property (weak, nonatomic) IBOutlet UILabel *articleCreator;
+@property (weak, nonatomic) IBOutlet UILabel *articleDate;
+@property (weak, nonatomic) IBOutlet UILabel *articleTitle;
+@property (weak, nonatomic) IBOutlet UITextView *articleText;
+@property (weak, nonatomic) IBOutlet UIButton *articleVoteButton;
+
+- (IBAction)voteArticle:(id)sender;
+
+- (id)initWithTitle:(NSString *)aTitle
+            article:(NSDictionary *)anArticle
+         backButton:(BOOL)showBackButton
+              style:(UITableViewStyle)aStyle;
 
 @end
