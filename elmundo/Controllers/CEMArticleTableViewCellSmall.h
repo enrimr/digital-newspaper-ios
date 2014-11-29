@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *articleTitle;
 @property (weak, nonatomic) IBOutlet UILabel *articleDate;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-@property (weak, nonatomic) IBOutlet UILabel *articleText;
+@property (weak, nonatomic) IBOutlet UITextView *articleText;
 
 @end

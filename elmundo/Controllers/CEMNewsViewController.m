@@ -153,8 +153,15 @@
                                         }];
         }
         
+        // Mostramos el texto
+        NSString *textString = (NSString *)[item objectForKey:@"text"];
+        if ([textString length] >= 150) {
+            textString = [textString substringToIndex:149];
+        }
+        [cell.articleText setText:[self stringByStrippingHTML:textString]];
+        [cell.articleText setFont:[UIFont fontWithName:@"MuseoSans-700" size:12.0]];
+        [cell.articleText setTextColor:[UIColor lightGrayColor]];
         
-        [cell.articleText setText:[item objectForKey:@"text"]];
         [cell.articleTitle setText:[item objectForKey:@"title"]];
         
         // Calculamos el timestamp
@@ -245,6 +252,13 @@
 - (void) backButtonClick {
     NSLog(@"backButtonClick local");
     [[CQANavigationBarUtils alloc] backButtonClick:self.navigationController];
+}
+
+-(NSString *) stringByStrippingHTML:(NSString *)s {
+    NSRange r;
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
 }
 
 @end
