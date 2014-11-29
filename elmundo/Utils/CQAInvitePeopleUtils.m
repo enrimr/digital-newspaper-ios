@@ -87,9 +87,25 @@
 
 -(void)shareDidEnd:(id)result{
     NSLog(@"shareDidEnd");
+    [[CQAAlerts alloc] showInTopViewWithMessage:NSLocalizedString(@"¡Tu mensaje se ha compartido!", nil)
+                                          color:[UIColor colorWithRed:122/255.0f
+                                                                green:213/255.0f
+                                                                 blue:180/255.0f
+                                                                alpha:1.0f]
+                                      fontColor:[UIColor darkGrayColor]
+                                       position:nil
+                                           time:ALERT_TIME_LONG];
 }
 
 -(void)shareFailure:(id)result{
     NSLog(@"shareFailure");
+    [[CQAAlerts alloc] showInTopViewWithMessage:NSLocalizedString(@"Se ha producido un error :S", nil)
+                                          color:[UIColor colorWithRed:202/255.0f
+                                                                green:81/255.0f
+                                                                 blue:53/255.0f
+                                                                alpha:1.0f]
+                                      fontColor:[UIColor whiteColor]
+                                       position:nil
+                                           time:ALERT_TIME_LONG];
 }
 @end

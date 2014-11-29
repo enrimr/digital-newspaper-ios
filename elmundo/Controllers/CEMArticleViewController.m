@@ -318,10 +318,26 @@
 
 -(void)voteArticleDidEnd:(id)result{
     NSLog(@"voteArticleDidEnd");
+    [[CQAAlerts alloc] showInTopViewWithMessage:NSLocalizedString(@"¡Gracias por votar!", nil)
+                                          color:[UIColor colorWithRed:122/255.0f
+                                                                green:213/255.0f
+                                                                 blue:180/255.0f
+                                                                alpha:1.0f]
+                                      fontColor:[UIColor darkGrayColor]
+                                       position:nil
+                                           time:ALERT_TIME_LONG];
 }
 
 -(void)voteArticleFailure:(id)result{
     NSLog(@"voteArticleFailure");
+    [[CQAAlerts alloc] showInTopViewWithMessage:NSLocalizedString(@"Se ha producido un error :S", nil)
+                                          color:[UIColor colorWithRed:202/255.0f
+                                                                green:81/255.0f
+                                                                 blue:53/255.0f
+                                                                alpha:1.0f]
+                                      fontColor:[UIColor whiteColor]
+                                       position:nil
+                                           time:ALERT_TIME_LONG];
 }
 
 -(void)voteArticleAction{
@@ -333,11 +349,6 @@
                               destructiveButtonTitle:nil
                               otherButtonTitles:@"Sorprendido", @"Satisfecho", @"Indiferente", @"Enfadado", @"Triste", nil];
     
-    /*[[[action valueForKey:@"_buttons"] objectAtIndex:0] setImage:[UIImage imageNamed:@"ic_11_moods_astonished"] forState:UIControlStateNormal];
-    [[[action valueForKey:@"_buttons"] objectAtIndex:1] setImage:[UIImage imageNamed:@"ic_11_moods_pleased"] forState:UIControlStateNormal];
-    [[[action valueForKey:@"_buttons"] objectAtIndex:2] setImage:[UIImage imageNamed:@"ic_11_moods_indiferent"] forState:UIControlStateNormal];
-    [[[action valueForKey:@"_buttons"] objectAtIndex:3] setImage:[UIImage imageNamed:@"ic_11_moods_worried"] forState:UIControlStateNormal];
-    [[[action valueForKey:@"_buttons"] objectAtIndex:4] setImage:[UIImage imageNamed:@"ic_11_moods_sorry"] forState:UIControlStateNormal];*/
     action.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [action showFromBarButtonItem:self.parentViewController.navigationItem.leftBarButtonItem animated:YES];
 

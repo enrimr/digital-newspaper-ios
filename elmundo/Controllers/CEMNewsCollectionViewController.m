@@ -355,6 +355,14 @@ static NSString * const reuseIdentifier = @"Cell";
         [newArray addObject:buttonAdd];
         _tableElements = newArray;
         [self.collectionView reloadData];
+        [[CQAAlerts alloc] showInTopViewWithMessage:NSLocalizedString(@"¡Nuevo canal añadido!", nil)
+                                              color:[UIColor colorWithRed:122/255.0f
+                                                                    green:213/255.0f
+                                                                     blue:180/255.0f
+                                                                    alpha:1.0f]
+                                          fontColor:[UIColor darkGrayColor]
+                                           position:nil
+                                               time:ALERT_TIME_LONG];
     }
 }
 

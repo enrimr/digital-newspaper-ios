@@ -17,6 +17,7 @@
 #import "CEMDefinitions.h"
 #import "CEMElMundoApi.h"
 #import "CEMSettings.h"
+#import "CQAAlerts.h"
 
 #endif
 
