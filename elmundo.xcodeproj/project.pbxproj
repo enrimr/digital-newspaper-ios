@@ -33,6 +33,7 @@
 		E5B91D6D1A29F36F00012E7F /* CQANotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91D6B1A29F36F00012E7F /* CQANotificationManager.m */; };
 		E5B91D701A29F70200012E7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D6F1A29F70200012E7F /* CoreLocation.framework */; };
 		E5B91D721A29FAA200012E7F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D711A29FAA200012E7F /* MobileCoreServices.framework */; };
+		E5B91DD71A2A103A00012E7F /* whatsred.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5B91DD61A2A103A00012E7F /* whatsred.jpg */; };
 		E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */; };
 		E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */; };
 		E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */; };
@@ -187,6 +188,7 @@
 		E5B91D6C1A29F36F00012E7F /* CQANotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CQANotificationManager.h; path = Utils/CQANotificationManager.h; sourceTree = "<group>"; };
 		E5B91D6F1A29F70200012E7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E5B91D711A29FAA200012E7F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E5B91DD61A2A103A00012E7F /* whatsred.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whatsred.jpg; sourceTree = "<group>"; };
 		E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
 		E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
 		E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 		E50679971A236A8400F39808 /* Logos */ = {
 			isa = PBXGroup;
 			children = (
+				E5B91DD61A2A103A00012E7F /* whatsred.jpg */,
 				E5CB39A51A28FFDF00DD0D7A /* logoSplash.png */,
 				E50679981A236A8400F39808 /* logoLaunch */,
 				E50679991A236A8400F39808 /* logoLaunch@2x */,
@@ -745,6 +748,7 @@
 				E5CB3A4F1A298E9800DD0D7A /* ic_04_actionbar_back.png in Resources */,
 				E5CB39E71A29667500DD0D7A /* ic_TabNavBlueArrowNav@2x.png in Resources */,
 				E50679691A235D6700F39808 /* LaunchScreen.xib in Resources */,
+				E5B91DD71A2A103A00012E7F /* whatsred.jpg in Resources */,
 				E5CB39EF1A296DF000DD0D7A /* CEMArticleViewController.xib in Resources */,
 				E506799E1A236A8400F39808 /* logoLaunch in Resources */,
 				E5CB3A0E1A298E1400DD0D7A /* ic_02_actionbar_options@2x.png in Resources */,

@@ -153,7 +153,10 @@ static NSString * const reuseIdentifier = @"Cell";
     
         float fontSize = 12.0;
         float bottom = 0;
-        if (cell.frame.size.width > 205) {
+        if (indexPath.item == 3){ // ahí está el ejemplo de publi
+            fontSize = 8;
+            bottom = 18;
+        } else if (cell.frame.size.width > 205) {
             fontSize += 6;
         } else if (cell.frame.size.width > 95) {
             fontSize += 3;
@@ -166,6 +169,7 @@ static NSString * const reuseIdentifier = @"Cell";
                                                                cell.frame.size.height - 32 + bottom,
                                                                cell.frame.size.width - 10,
                                                                30)];
+        
         [label setTextColor:[UIColor whiteColor]];
     
         [label setText:NSLocalizedString([item objectForKey:@"channel"],nil)];
@@ -184,7 +188,9 @@ static NSString * const reuseIdentifier = @"Cell";
         [spinner setHidden:YES];
         
         [cell addSubview:spinner];
-        [cell addSubview:backgroundTitle];
+        if (indexPath.item != 3){ // para el ejemplo de la publi
+            [cell addSubview:backgroundTitle];
+        }
         [cell addSubview:label];
         
         [cell setBackgroundView:imageView];
@@ -260,7 +266,10 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [self.navigationController pushViewController:newsVC animated:YES];*/
     NSLog([NSString stringWithFormat:@"%d", indexPath.item]);
-    if (indexPath.item == [_tableElements count]-1){
+    if (indexPath.item == 3){
+        // Ejemplo para publi
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://whatsred.com/"]];
+    } else if (indexPath.item == [_tableElements count]-1){
         NSLog(@"Agregar categoria");
         [self selectChannels:self];
     } else {
@@ -323,6 +332,12 @@ static NSString * const reuseIdentifier = @"Cell";
                              @"", @"channel",
                              @"ic_03_topic_add", @"image", nil]];
     }
+    
+    NSDictionary *ad = [NSDictionary dictionaryWithObjectsAndKeys:
+                @"publi", @"channel",
+                @"http://creapubli.es/website/wp-content/uploads/2014/08/cc.jpg", @"image", nil];
+    
+    [tableElementsMutable insertObject:ad atIndex:3];
     
     _tableElements = tableElementsMutable;
 }
