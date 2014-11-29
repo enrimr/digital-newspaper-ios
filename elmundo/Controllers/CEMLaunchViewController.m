@@ -13,6 +13,7 @@
 #import "GKLCubeViewController.h"
 #import "CEMNewsViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "CEMCreatorsCollectionCollectionViewController.h"
 
 @interface CEMLaunchViewController ()
 {
@@ -139,8 +140,13 @@
                                                                                     news:socialArticlesArray
                                                                                 backButton:YES
                                                                                    style:UITableViewStylePlain];
+    NSArray *creatorsArray = [[NSArray alloc] init];
+    CEMCreatorsCollectionCollectionViewController *creatorsCategoryVC;
+    creatorsCategoryVC = [[CEMCreatorsCollectionCollectionViewController alloc] initWithTitle:@"Autores" creators:creatorsArray backButton:NO];
+    
     [cubeViewController addCubeSideForChildController:articlesVC];
     [cubeViewController addCubeSideForChildController:socialCategoryVC];
+    [cubeViewController addCubeSideForChildController:creatorsCategoryVC];
     
     [[self navigationController] pushViewController:cubeViewController animated:YES];
 }

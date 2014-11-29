@@ -34,6 +34,8 @@
 		E5B91D701A29F70200012E7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D6F1A29F70200012E7F /* CoreLocation.framework */; };
 		E5B91D721A29FAA200012E7F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B91D711A29FAA200012E7F /* MobileCoreServices.framework */; };
 		E5B91DD71A2A103A00012E7F /* whatsred.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5B91DD61A2A103A00012E7F /* whatsred.jpg */; };
+		E5B91DDB1A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B91DD91A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.m */; };
+		E5B91DDC1A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5B91DDA1A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.xib */; };
 		E5CB39981A28E2B200DD0D7A /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */; };
 		E5CB39991A28E2B200DD0D7A /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */; };
 		E5CB399A1A28E2B200DD0D7A /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */; };
@@ -189,6 +191,9 @@
 		E5B91D6F1A29F70200012E7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E5B91D711A29FAA200012E7F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E5B91DD61A2A103A00012E7F /* whatsred.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whatsred.jpg; sourceTree = "<group>"; };
+		E5B91DD81A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEMCreatorsCollectionCollectionViewController.h; path = Controllers/CEMCreatorsCollectionCollectionViewController.h; sourceTree = "<group>"; };
+		E5B91DD91A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CEMCreatorsCollectionCollectionViewController.m; path = Controllers/CEMCreatorsCollectionCollectionViewController.m; sourceTree = "<group>"; };
+		E5B91DDA1A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CEMCreatorsCollectionCollectionViewController.xib; path = Controllers/CEMCreatorsCollectionCollectionViewController.xib; sourceTree = "<group>"; };
 		E5CB39921A28E2B200DD0D7A /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
 		E5CB39931A28E2B200DD0D7A /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
 		E5CB39941A28E2B200DD0D7A /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
@@ -411,6 +416,9 @@
 		E50679881A2361AC00F39808 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E5B91DD81A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.h */,
+				E5B91DD91A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.m */,
+				E5B91DDA1A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.xib */,
 				E50679891A2363B600F39808 /* CEMNewsViewController.h */,
 				E506798A1A2363B600F39808 /* CEMNewsViewController.m */,
 				E506798B1A2363B600F39808 /* CEMNewsViewController.xib */,
@@ -797,6 +805,7 @@
 				E5CB39E61A29667500DD0D7A /* ic_TabNavBlueArrowNav.png in Resources */,
 				E5CB3A601A298E9800DD0D7A /* ic_12_comment_audio.png in Resources */,
 				E50679661A235D6700F39808 /* Images.xcassets in Resources */,
+				E5B91DDC1A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.xib in Resources */,
 				E5CB39B61A29064800DD0D7A /* ic_Settings@2x.png in Resources */,
 				E5CB3A5F1A298E9800DD0D7A /* ic_11_moods_worried.png in Resources */,
 				E5CB3A191A298E1400DD0D7A /* ic_06_profile_moods@2x.png in Resources */,
@@ -849,6 +858,7 @@
 				E5CB39EE1A296DF000DD0D7A /* CEMArticleViewController.m in Sources */,
 				E5E8D12B1A278486009386DE /* CQABaseApi.m in Sources */,
 				E5CB3A681A2991F500DD0D7A /* CQAInvitePeopleUtils.m in Sources */,
+				E5B91DDB1A2A20E300012E7F /* CEMCreatorsCollectionCollectionViewController.m in Sources */,
 				E5CB39E31A295CAF00DD0D7A /* CQATimeUtils.m in Sources */,
 				E50679581A235D6700F39808 /* main.m in Sources */,
 				E5E8D12C1A278486009386DE /* CEMElMundoApi.m in Sources */,
